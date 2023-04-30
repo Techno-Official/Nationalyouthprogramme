@@ -1,0 +1,114 @@
+<!--
+   Made By -: Techzniczone
+   website - :https://www.techzniczone.com/
+   email - :techzniczone@gmail.com
+   -->
+<!-------------------------------------- Header Page ------------------------------------------------>
+<!--------------------------------------------------------------------------------------------------->
+{% load static %}
+<header id="pageHeader" class="bg-white">
+   <div class="hdTopBar py-2 py-xl-3 bg-dark d-none d-md-block">
+      <div class="container">
+         <div class="row">
+            <div class="col-8">
+               <ul class="list-unstyled hdScheduleList mb-0 d-flex flex-wrap align-items-center">
+                  <li>
+                     <a href="tel:18001234567">
+                     <i class="fas fa-phone align-middle icn"><span class="sr-only">icon</span></i>
+                     Call on: 1800 123 000
+                     </a>
+                  </li>
+                  <li>
+                     <time datetime="2011-01-12">
+                     <i class="fa fa-clock align-middle icn"><span class="sr-only">icon</span></i>
+                     Mon – Fri (9:30 AM to 5:30 PM)
+                     </time>
+                  </li>
+                  <li>
+                     <a href="tel:18001234567">
+                     <i class="fas fa-phone align-middle icn"><span class="sr-only">icon</span></i>
+                     E-mail: officer@nationalyouthprogramme.in
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="hdFixerWrap py-2 py-md-3 py-xl-5 sSticky bg-white">
+      <div class="container">
+         <nav class="navbar navbar-expand-md navbar-light p-0">
+            <div class="logo flex-shrink-0 mr-3 mr-xl-8 mr-xlwd-16">
+               <a href="/">
+               <img width="80px" src="{% static 'main/images/homepage/logo2.png' %}" class="img-fluid" alt="egovt">
+               </a>
+            </div>
+            <div class="hdNavWrap flex-grow-1 d-flex align-items-center justify-content-end justify-content-lg-start">
+               <div class="collapse navbar-collapse pageMainNavCollapse mt-2 mt-md-0" id="pageMainNavCollapse">
+                  <ul class="navbar-nav mainNavigation">
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/about_us" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/news" role="button" aria-haspopup="true" aria-expanded="false">News</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/gallery" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/sector" role="button" aria-haspopup="true" aria-expanded="false">Sectors</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/contact_us" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education and Training</a>
+                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                           <ul class="list-unstyled mb-0 hdDropdownList">
+                              <li><a class="dropdown-item" href="#">Course and Colleges</a></li>
+                              <li><a class="dropdown-item" href="#">Admission Registration</a></li>
+                              <li><a class="dropdown-item" href="#">Exam Registration</a></li>
+                              <li><a class="dropdown-item" href="#">Mark Registration</a></li>
+                              <li><a class="dropdown-item" href="#">Add-on Programme (Colleges)</a></li>
+                              <li><a class="dropdown-item" href="#">Application for Affiliation</a></li>
+                              <li><a class="dropdown-item" href="#">Pay Online Fee</a></li>
+                              <li><a class="dropdown-item" href="#">E Office File Sanction</a></li>
+                              <li><a class="dropdown-item" href="#">Student Marks</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Official and Administration</a>
+                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                           <ul class="list-unstyled mb-0 hdDropdownList">
+                              <li><a class="dropdown-item" href="#">E-Finance and Accounts</a></li>
+                              <li><a class="dropdown-item" href="#">E-Office Accounts</a></li>
+                              <li><a class="dropdown-item" href="#">E-Office Students Register</a></li>
+                              <li><a class="dropdown-item" href="#">E-Officer Email</a></li>
+                              <li><a class="dropdown-item" href="#">E-Office Queue Files</a></li>
+                              <li><a class="dropdown-item" href="#">E-Office Files</a></li>
+                              <li><a class="dropdown-item" href="#">E-Employee Records</a></li>
+                              <li><a class="dropdown-item" href="#">E-Employee Live Status</a></li>
+                              <li><a class="dropdown-item" href="#">E-Administration</a></li>
+                              <li><a class="dropdown-item" href="#">E-Students Certificate Verification</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/dologin" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="hdRighterWrap d-flex align-items-center justify-content-end">
+               <button class="navbar-toggler pgNavOpener ml-2 bdrWidthAlter position-relative" type="button" data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+            </div>
+         </nav>
+      </div>
+   </div>
+</header>
