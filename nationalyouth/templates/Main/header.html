@@ -6,6 +6,24 @@
 <!-------------------------------------- Header Page ------------------------------------------------>
 <!--------------------------------------------------------------------------------------------------->
 {% load static %}
+<style>
+   .circulate_image{
+      width:5%;
+      position: absolute;
+      top:50%;
+      left: 50px;
+      transform: translate(-50%,-50%);
+      animation: myfirst 15.5s infinite linear;  
+      }
+   @keyframes myfirst{
+      0%{
+         transform: translate(-50%,-50%) rotate(0deg);
+      }
+      100%{
+         transform: translate(-50%,-50%) rotate(360deg);
+      }
+   }
+</style>
 <header id="pageHeader" class="bg-white">
    <div class="hdTopBar py-2 py-xl-3 bg-dark d-none d-md-block">
       <div class="container">
@@ -50,19 +68,19 @@
                         <a class="nav-link" href="/" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/about_us" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/news" role="button" aria-haspopup="true" aria-expanded="false">News</a>
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">News</a>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/gallery" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/sector" role="button" aria-haspopup="true" aria-expanded="false">Sectors</a>
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sectors</a>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/contact_us" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
                         <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education and Training</a>
@@ -98,7 +116,7 @@
                         </div>
                      </li>
                      <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/dologin" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
                      </li>
                   </ul>
                </div>
