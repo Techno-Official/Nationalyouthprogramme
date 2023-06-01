@@ -1,0 +1,438 @@
+<!--
+   Made By -: Techzniczone
+   website - :https://www.techzniczone.com/
+   email - :techzniczone@gmail.com
+   -->
+<!-------------------------------------- E-Employee Daily Work Statement Page ----------------------->
+<!--------------------------------------------------------------------------------------------------->
+{% extends 'Main/base.html' %}
+{% block main_content %}
+{% load static %}
+<div class="phStickyWrap">
+   {% include 'Main/header.html' %}
+</div>
+<body>
+   <div class="d-lg-flex half">
+   <div class="container mb-16">
+      <div class="row align-items-center justify-content-center">
+         <div class="col-lg-12 col-md-12 col-sm-6 py-5 pt-15">
+            <center>
+               <h3>Employee Daily Work Statement</h3>
+               <div style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="width: 100px; height: 3px; background-color: #3446CD; margin-bottom: 10px;">
+                  </div>
+                  <div style="width: 30px; height: 3px; background-color: #3446CD; margin-bottom: 55px;">
+                  </div>
+               </div>
+            </center>
+            <!-- <center>
+               <p class="mb-4">Error Message Comes Here</p>
+               </center> -->
+            <form style="margin-top: 100px;" action="#" method="post">
+               {% csrf_token %}
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Employee Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="lname">Work Start Time</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Employee Code</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Work End Time</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Sr. No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">File No.</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="fname">Work Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group first">
+                        <label for="lname">Work Status</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Work in Progress</option>
+                           <option>Pending</option>
+                           <option>Work Started</option>
+                           <option>Work Finished</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Date</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Charge Officer Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Approved/Not Approved</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Approved</option>
+                           <option>Not Approved</option>
+                           <option>Pending</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Chief Executive Officer Name</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group first">
+                        <label for="fname">Approved/Not Approved</label>
+                        <select class="form-control">
+                           <option disabled="true" selected>Select</option>
+                           <option>Approved</option>
+                           <option>Not Approved</option>
+                           <option>Pending</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <input type="submit" value="Submit Form" class="btn px-5 btn-primary"
+                  style="background-color: #3446CD;" />
+            </form>
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'forms/js/jquery-3.3.1.min.js' %}"></script>
+   <script src="{% static 'forms/js/popper.min.js' %}"></script>
+   <script src="{% static 'forms/js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'forms/js/main.js' %}"></script>
+</body>
+{% endblock %}
