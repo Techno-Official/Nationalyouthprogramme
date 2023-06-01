@@ -48,4 +48,10 @@ urlpatterns = [
     path('e_office_mark_list_registration',e_office_mark_list_registration,name='e_office_mark_list_registration'),
     path('e_office_student_admisiion_registration',e_office_student_admisiion_registration,name='e_office_student_admisiion_registration'),
     path('e_office_student_add_on_programme',e_office_student_add_on_programme,name='e_office_student_add_on_programme'),
+
+
+    path('e_office_files_student_mark_list',e_office_files_student_mark_list,name='e_office_files_student_mark_list'),
+    path('e_office_files_daily_work_statement',e_office_files_daily_work_statement,name='e_office_files_daily_work_statement'),
+    path('e_office_files_employee_live_status',e_office_files_employee_live_status,name='e_office_files_employee_live_status'),
+    path('e_office_files_pay_online_fees',e_office_files_pay_online_fees,name='e_office_files_pay_online_fees'),
 ]
