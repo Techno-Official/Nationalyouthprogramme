@@ -33,12 +33,19 @@ urlpatterns = [
 
     path('e_finance_and_accounts',e_finance_and_accounts,name='se_finance_and_accounts'),
     path('e_office_accounts',e_office_accounts,name='e_office_accounts'),
-    path('e_office_student_register',e_office_student_register,name='student_markse_office_student_register'),
+    path('e_office_student_register',e_office_student_register,name='e_office_student_register'),
     path('e_office_email',e_office_email,name='e_office_email'),
     path('e_office_queue_files',e_office_queue_files,name='e_office_queue_files'),
     path('e_office_files',e_office_files,name='e_office_files'),
     path('e_employee_records',e_employee_records,name='e_employee_records'),
     path('e_employee_live_status',e_employee_live_status,name='e_employee_live_status'),
+    path('e_employee_daily_work_statement',e_employee_daily_work_statement,name='e_employee_daily_work_statement'),
     path('e_adminstations',e_adminstations,name='e_adminstations'),
     path('e_student_certificate_verification',e_student_certificate_verification,name='e_student_certificate_verification'),
+
+
+
+    path('e_office_mark_list_registration',e_office_mark_list_registration,name='e_office_mark_list_registration'),
+    path('e_office_student_admisiion_registration',e_office_student_admisiion_registration,name='e_office_student_admisiion_registration'),
+    path('e_office_student_add_on_programme',e_office_student_add_on_programme,name='e_office_student_add_on_programme'),
 ]
