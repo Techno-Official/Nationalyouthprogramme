@@ -54,4 +54,7 @@ urlpatterns = [
     path('e_office_files_daily_work_statement',e_office_files_daily_work_statement,name='e_office_files_daily_work_statement'),
     path('e_office_files_employee_live_status',e_office_files_employee_live_status,name='e_office_files_employee_live_status'),
     path('e_office_files_pay_online_fees',e_office_files_pay_online_fees,name='e_office_files_pay_online_fees'),
+
+
+    path('staff_work_alloted',staff_work_alloted,name='staff_work_alloted'),
 ]
