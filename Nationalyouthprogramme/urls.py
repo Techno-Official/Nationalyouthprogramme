@@ -26,6 +26,7 @@ urlpatterns = [
     path('mark_registration',mark_registration,name='mark_registration'),
     path('add_on_programme',add_on_programme,name='add_on_programme'),
     path('application_for_affiliation',application_for_affiliation,name='application_for_affiliation'),
+    path('employee_service_book',employee_service_book,name='employee_service_book'),
     path('pay_online_fees',pay_online_fees,name='pay_online_fees'),
     path('e_office_file_sanction',e_office_file_sanction,name='e_office_file_sanction'),
     path('student_marks',student_marks,name='student_marks'),
