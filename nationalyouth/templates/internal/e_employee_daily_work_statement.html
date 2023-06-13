@@ -40,7 +40,7 @@
                   <div class="col-md-6">
                      <div class="form-group first">
                         <label for="lname">Work Start Time</label>
-                        <input type="text" class="form-control">
+                        <input type="time" class="form-control">
                      </div>
                   </div>
                </div>
@@ -54,7 +54,7 @@
                   <div class="col-md-6">
                      <div class="form-group first">
                         <label for="fname">Work End Time</label>
-                        <input type="text" class="form-control">
+                        <input type="time" class="form-control">
                      </div>
                   </div>
                </div>
@@ -382,7 +382,7 @@
                   <div class="col-md-6">
                      <div class="form-group first">
                         <label for="fname">Date</label>
-                        <input type="text" class="form-control">
+                        <input type="date" id="datepicker" class="form-control">
                      </div>
                   </div>
                   <div class="col-md-6">
@@ -434,5 +434,12 @@
    <script src="{% static 'forms/js/popper.min.js' %}"></script>
    <script src="{% static 'forms/js/bootstrap.min.js' %}"></script>
    <script src="{% static 'forms/js/main.js' %}"></script>
+   <script>
+      $(function(){
+   $("#datepicker").datepicker({
+       dateFormat: "yy-mm-dd"
+   });
+});
+</script>
 </body>
 {% endblock %}
