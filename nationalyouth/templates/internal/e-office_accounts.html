@@ -77,7 +77,7 @@
                             <div class="col-md-6">
                                 <div class="form-group first">
                                     <label for="fname">Date</label>
-                                    <input type="text" class="form-control" />
+                                    <input id="datepicker" type="date" class="form-control" />
                                 </div>
                             </div>
                         </div>
@@ -259,6 +259,13 @@
         <script src="{% static 'forms/js/popper.min.js' %}"></script>
         <script src="{% static 'forms/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'forms/js/main.js' %}"></script>
+        <script>
+            $(function(){
+         $("#datepicker").datepicker({
+             dateFormat: "yy-mm-dd"
+         });
+     });
+     </script>
         {% endblock %}
     </div>
 </body>
