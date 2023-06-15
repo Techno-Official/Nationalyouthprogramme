@@ -107,14 +107,14 @@
                                         <img src="{% static 'main/images/homepage/logoimageone.jpeg' %}" alt="Left Logo"
                                             class="logo" style="width: 150px; height: 80px; margin-top: 150px;">
                                         <img src="{% static 'main/images/homepage/logoclear.png' %}" alt="Top Left Logo"
-                                            class="top-logo" style="position: absolute; top: 0; left: 0px; width: 125px; margin-top: -35px; height: 160px; 
+                                            class="top-logo" style="position: absolute; top: 0; left: 0px; width: 125px; margin-top: -85px; height: 160px; 
                                  transform: translate(-50%, -50%); z-index: 1; border: 1px solid white;">
                                     </div>
                                 </div>
                                 <div class="col-8">
 
                                     <div class="card-footer"
-                                        style="background-color: #3446CD; margin-top: 20px; color: rgb(255, 255, 255); border: 3px solid white; border-radius: 10px;">
+                                        style="background-color: #3446CD; margin-top: -62px; color: rgb(255, 255, 255); border: 3px solid white; border-radius: 10px;">
                                         Vocational Training For Unemployed Youth
                                     </div>
 
@@ -159,7 +159,7 @@
                                             alt="Right Logo" class="logo"
                                             style="width: 150px; height: 80px; margin-top: 150px;">
                                         <img src="{% static 'main/images/homepage/logoclear.png' %}" alt="Top Left Logo"
-                                            class="top-logo" style="position: absolute; top: 0; right: 0; width: 500px; margin-top: -35px; height: 160px; 
+                                            class="top-logo" style="position: absolute; top: 0; right: 0; width: 500px; margin-top: -85px; height: 160px; 
                                  transform: translate(50%, -50%); z-index: 1; border: 1px solid white;">
                                     </div>
                                 </div>
@@ -190,13 +190,17 @@
         <!-------------------------------------------------------------------------------------------------------------------------->
         <!-------------------------------------------------------------------------------------------------------------------------->
         <!----------------------------------------------Skill Photos --------------------------------------------------------------->
-        <section class=" exploreServicesBlock position-relative pt-7 pt-md-12 pt-lg-16 pt-xl-20 pb-0 pb-md-4 pb-lg-8
-         pb-xl-12" style="
-         background-color: #3446CD;">
+
+
+
+
+        <section
+            class="exploreServicesBlock position-relative pt-7 pt-md-12 pt-lg-16 pt-xl-20 pb-0 pb-md-4 pb-lg-8 pb-xl-12"
+            style="background-color: #3446CD;">
             <div class="container">
                 <header class="headingHead mb-7 md-md-9 mb-lg-13">
                     <div class="row align-items-end">
-                        <div class=" col-12 col-sm-7 col-xl-5">
+                        <div class="col-12 col-sm-7 col-xl-5">
                             <h2 class="mb-0">FREE SKILL TRAINING</h2>
                             <h5 class="mb-0">FOR WOMEN AND YOUTH</h5>
                             <div
@@ -209,77 +213,131 @@
                     </div>
                 </header>
                 <div class="row image">
-                    <div class="echSliderWrap overflow-hidden w-100">
-                        <div class="echSlider mx-auto w-100">
-                            <div>
-                                <div class="col-12">
-                                    <div class="echColumn d-block w-100 bgCover position-relative"
-                                        style="background-image: url({% static 'main/images/homepage/5.png' %});">
-                                        <div
-                                            class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                    <div id="carouselExample" class="carousel slide echSliderWrap overflow-hidden w-100"
+                        data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExample" data-slide-to="1"></li>
+                            <li data-target="#carouselExample" data-slide-to="2"></li>
+                            <!-- Add more indicators if there are more images -->
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="echColumn d-block w-100 bgCover position-relative"
+                                            style="background-image: url({% static 'main/images/homepage/5.png' %});">
+                                            <div
+                                                class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="echColumn d-block w-100 bgCover position-relative"
+                                            style="background-image: url({% static 'main/images/homepage/6.png' %});">
+                                            <div
+                                                class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="echColumn d-block w-100 bgCover position-relative"
+                                            style="background-image: url({% static 'main/images/homepage/7.png' %});">
+                                            <div
+                                                class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="col-12">
-                                    <div class="echColumn d-block w-100 bgCover position-relative"
-                                        style="background-image: url({% static 'main/images/homepage/6.png' %});">
-                                        <div
-                                            class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="echColumn d-block w-100 bgCover position-relative"
+                                            style="background-image: url({% static 'main/images/homepage/Eight.jpg' %});">
+                                            <div
+                                                class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="echColumn d-block w-100 bgCover position-relative"
+                                            style="background-image: url({% static 'main/images/homepage/Nine.jpg' %});">
+                                            <div
+                                                class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="echColumn d-block w-100 bgCover position-relative"
+                                            style="background-image: url({% static 'main/images/homepage/Ten.jpg' %});">
+                                            <div
+                                                class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="col-12">
-                                    <div class="echColumn d-block w-100 bgCover position-relative"
-                                        style="background-image: url({% static 'main/images/homepage/7.png' %});">
-                                        <div
-                                            class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-12">
-                                    <div class="echColumn d-block w-100 bgCover position-relative"
-                                        style="background-image: url({% static 'main/images/homepage/Eight.jpg' %});">
-                                        <div
-                                            class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-12">
-                                    <div class="echColumn d-block w-100 bgCover position-relative"
-                                        style="background-image: url({% static 'main/images/homepage/Nine.jpg' %});">
-                                        <div
-                                            class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-12">
-                                    <div class="echColumn d-block w-100 bgCover position-relative"
-                                        style="background-image: url({% static 'main/images/homepage/Ten.jpg' %});">
-                                        <div
-                                            class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- Add more carousel items if there are more images -->
                         </div>
+                        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
-
             <center>
                 <a class="btn btn-danger mb-5 mt-11" href="/gallery">View All</a>
             </center>
         </section>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            // Activate the carousel
+            $(document).ready(function () {
+                $('#carouselExample').carousel({
+                    interval: 3000 // Change slide interval (in milliseconds)
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!-------------------------------------------------------------------------------------------------------------------------->
