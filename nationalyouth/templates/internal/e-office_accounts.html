@@ -32,22 +32,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">2023- March 31 Clossing</label>
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group first">
-                                    <label for="fname">2023- March 31 Clossing</label>
-                                    <textarea type="text" class="form-control"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group first">
-                                    <label for="fname">Type of Accounts</label>
-                                    <select class="form-control">
+                                    <label for="fname">Type of Accounts <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="type_of_account" required>
                                         <option disabled="true" selected>Select</option>
                                         <option>Co-operative Society Income</option>
                                         <option>Co-operative Society Expenses</option>
@@ -56,16 +42,16 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Voucher Number</label>
-                                    <input type="text" class="form-control" />
+                                    <label for="fname">Voucher Number <span class="text-danger">*</span></label>
+                                    <input name="voucher_number" type="text" class="form-control" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Particulars Head</label>
-                                    <select class="form-control">
+                                    <label for="fname">Particulars Head <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="particular_head" required>
                                         <option disabled="true" selected>Select</option>
                                         <option>Affiliation Fee</option>
                                         <option>Share Certificate</option>
@@ -76,8 +62,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Date</label>
-                                    <input id="datepicker" type="date" class="form-control" />
+                                    <label for="fname">Date <span class="text-danger">*</span></label>
+                                    <input name="date" id="datepicker" type="date" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -85,13 +71,7 @@
                             <div class="col-md-6">
                                 <div class="form-group first">
                                     <label for="fname">Amount</label>
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group first">
-                                    <label for="fname">Type of Income</label>
-                                    <input type="text" class="form-control" />
+                                    <input name="amount" type="text" class="form-control" />
                                 </div>
                             </div>
                         </div>
@@ -244,7 +224,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group first">
-                                    <label for="fname">Textarea</label>
+                                    <label for="fname">Note</label>
                                     <textarea type="text" class="form-control"></textarea>
                                 </div>
                             </div>
