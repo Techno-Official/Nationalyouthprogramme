@@ -61,14 +61,15 @@
                         <table class="table bg-white">
                             <thead class="bg-dark text-light">
                                 <tr>
+                                    <th>Sr. no</th>
                                     <th>TYPE OF ACCOUNTS</th>
                                     <th>VOUCHER NUMBER</th>
                                     <th>PARTICULARS HEAD</th>
-                                    <th>PARTICULARS HEAD (OTHERS)</th>
+                                    <!-- <th>PARTICULARS HEAD (OTHERS)</th> -->
                                     <th>DATE</th>
                                     <th>AMOUNT</th>
-                                    <th>TYPE OF INCOME</th>
-                                    <th>TYPE OF EXPENSE</th>
+                                    <!-- <th>TYPE OF INCOME</th>
+                                    <th>TYPE OF EXPENSE</th> -->
                                     <th>BANK NAME</th>
                                     <th>TRANSACTION ID NUMBER</th>
                                     <th>AMOUNT (ONLINE PAYMENT DETAILS)</th>
@@ -91,14 +92,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% if all_e_finance_and_accounts %}
+                                {% for finance_and_accounts in all_e_finance_and_accounts %}
                                 <tr>
-                                    <td>Saving</td>
-                                    <td>00011</td>
-                                    <td>Affiliation Renewal</td>
-                                    <td></td>
-                                    <td>05/07/2021</td>
-                                    <td></td>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{finance_and_accounts.type_of_account.type_of_account}}</td>
+                                    <td>{{finance_and_accounts.voucher_number}}</td>
+                                    <td>{{finance_and_accounts.particular_head}}</td>
+                                    <td>{{finance_and_accounts.date}}</td>
+                                    <td>{{finance_and_accounts.amount}}</td>
+                                    <td>{{finance_and_accounts.bank_name}}</td>
                                 </tr>
+                                {% endfor %}
+                                {% else %}
+                                <h4>No Records !!</h4>
+                                {% endif %}
                             </tbody>
                         </table>
                     </div>

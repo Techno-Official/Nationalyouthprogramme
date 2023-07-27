@@ -7,11 +7,14 @@
 from django.contrib import admin
 from django.urls import path
 from nationalyouth.views import *
+from django.conf.urls.static import static
+from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage,name='homepage'),
-    path('dologin', Login.as_view(),name='dologin'),
+    path('dologin', user_login,name='dologin'),
+    path('user_logout',user_logout,name='user_logout'),
     path('forgot_password',forgot_password,name='forgot_password'),
     path('about_us',about_us,name='about_us'),
     path('gallery',gallery,name='gallery'),
@@ -39,7 +42,9 @@ urlpatterns = [
     path('e_office_queue_files',e_office_queue_files,name='e_office_queue_files'),
     path('e_office_files',e_office_files,name='e_office_files'),
     path('e_employee_records',e_employee_records,name='e_employee_records'),
+    path('e_employee_live_and_leave_status',e_employee_live_and_leave_status,name='e_employee_live_and_leave_status'),
     path('e_employee_live_status',e_employee_live_status,name='e_employee_live_status'),
+    path('e_employee_leave_status',e_employee_leave_status,name='e_employee_leave_status'),
     path('e_employee_daily_work_statement',e_employee_daily_work_statement,name='e_employee_daily_work_statement'),
     path('e_adminstations',e_adminstations,name='e_adminstations'),
     path('e_student_certificate_verification',e_student_certificate_verification,name='e_student_certificate_verification'),
@@ -58,4 +63,6 @@ urlpatterns = [
 
 
     path('staff_work_alloted',staff_work_alloted,name='staff_work_alloted'),
-]
+
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
