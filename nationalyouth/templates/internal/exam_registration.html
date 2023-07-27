@@ -16,7 +16,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 col-md-12 col-sm-6 py-5 pt-15">
                     <center>
-                        <h3>EXAM REGISTRATION</h3>
+                        <h3 id="exam_registration">EXAM REGISTRATION</h3>
 
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <div style="width: 100px; height: 3px; background-color: #3446CD; margin-bottom: 10px;">
@@ -28,13 +28,19 @@
                     <!-- <center>
                   <p class="mb-4">Error Message Comes Here</p>
                </center> -->
-                    <form action="#" method="post">
+               <center><h5 style="color: red;">{{search_student_data_error}}</h5></center>
+               <div class="text-center alert alert-danger" id="error00" role="alert" style="display:none;"></div>
+               {% if register_number_allready %}
+               <div class="text-center alert alert-danger" role="alert">{{register_number_allready}}</div>
+               
+               {% endif %}
+                    <form method="get">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group first">
-                                    <label for="fname">Registration Number</label>
-                                    <input type="text" class="form-control" />
+                                    <label for="fname">Registration Number <span class="text-danger">*</span></label>
+                                    <input value="{{search_student_data.registration_number}}" required id="registration_number" name="search_registration_number" type="number" class="form-control" />
                                 </div>
                             </div>
                             <div class="col-md-4 mt-5">
@@ -45,22 +51,63 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group first">
-                                    <label for="fname">Student Name(Auto Field)</label>
-                                    <input readonly type="text" class="form-control" />
-                                </div>
-                            </div>
+                       <script>
+                    setTimeout(()=>{
+                        if("{{search_student_data.name_of_student}}"){
+                        $('#staticBackdrop').modal('show');
+
+                    }
+                    },1000)
+                    
+                    function closebtnfun(){
+                        $('#staticBackdrop').modal('hide');
+                    }
+                </script>
+                
+                
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Student Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closebtnfun()"></button>
                         </div>
+                        <div class="modal-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item">{{search_student_data.registration_number}}</li>
+                                <li class="list-group-item">{{search_student_data.name_of_student}}</li>
+                                <li class="list-group-item">{{search_student_data.id_number}}</li>
+                                <li class="list-group-item">{{search_student_data.date_of_birth}}</li>
+                                <li class="list-group-item">{{search_student_data.mobile_number}}</li>
+                                <li class="list-group-item">{{search_student_data.college_name}}</li>
+                                <li class="list-group-item">{{search_student_data.district}}</li>
+                                <li class="list-group-item">{{search_student_data.course_name}}</li>
+                                <li class="list-group-item">{{search_student_data.admission_fees}}</li>
+                                <li class="list-group-item">{{search_student_data.admission_month_and_year}}</li>
+                                <li class="list-group-item">{{search_student_data.principal_approval}}</li>
+                                <li class="list-group-item">{{search_student_data.date_and_time}}</li>
+                            
+                            </ul>
+
+
+                        </div>
+                       
+                    </div>
+                    </div>
+                </div>
+                    </form>
+                        <form method="post">
+                            {% csrf_token %}
                         <div style="margin-top: 100px;" class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="lname">Exam Fee</label>
-                                    <select class="form-control">
-                                        <option disabled="true" selected>Select</option>
-                                        <option>Paid</option>
-                                        <option>Unpaid</option>
+                                    <label for="lname">Exam Fee <span class="text-danger">*</span></label>
+                                    <select id="exam_fees" class="form-control">
+                                        <option value="" selected>Select</option>
+                                        {% for fe in all_exam_fee %}
+                                        <option value="{{fe.id}}">{{fe.exam_fees_type}}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -70,42 +117,42 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Exam Attendance %</label>
-                                    <input type="text" class="form-control" />
+                                    <label for="fname">Exam Attendance % <span class="text-danger">*</span></label>
+                                    <input id="exam_attendance" type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Any Fees Concession</label>
-                                    <input type="text" class="form-control" />
+                                    <label for="fname">Any Fees Concession <span class="text-danger">*</span></label>
+                                    <input id="any_fees_concession" type="text" class="form-control" />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="lname">Date</label>
+                                    <label for="lname">Date <span class="text-danger">*</span></label>
                                     <input type="date" id="datepicker" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Principal Code</label>
-                                    <input type="text" class="form-control">
+                                    <label for="fname">Principal Code <span class="text-danger">*</span></label>
+                                    <input id="principal_code" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Principal Name</label>
-                                    <input type="text" class="form-control">
+                                    <label for="fname">Principal Name <span class="text-danger">*</span></label>
+                                    <input id="principal_name" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Online Fee</label>
-                                    <input type="text" class="form-control">
+                                    <label for="fname">Online Fee <span class="text-danger">*</span></label>
+                                    <input id="online_fees" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -113,23 +160,23 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="fname">Remark</label>
-                                    <input type="text" class="form-control">
+                                    <label for="fname">Remark <span class="text-danger">*</span></label>
+                                    <input id="remark" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="lname">Principal Approval</label>
-                                    <select class="form-control">
-                                        <option disabled="true" selected>Select</option>
-                                        <option>Approved</option>
-                                        <option>Not Approved</option>
-
+                                    <label for="lname">Principal Approval <span class="text-danger">*</span></label>
+                                    <select class="form-control" id="principal_approval">
+                                        <option value="" selected>Select</option>
+                                        {% for st in all_status %}
+                                        <option value="{{st.id}}">{{st.status}}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" value="Submit Application" class="btn px-5 btn-primary"
+                        <input type="button" onclick="exam_regiterform()" value="Submit Application" class="btn px-5 btn-primary"
                             style="background-color: #3446CD;" />
                     </form>
                 </div>
@@ -139,6 +186,100 @@
         <script src="{% static 'forms/js/popper.min.js' %}"></script>
         <script src="{% static 'forms/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'forms/js/main.js' %}"></script>
+
+        <script>
+            function exam_regiterform() {
+                let get_registration_number = document.getElementById("registration_number").value;
+                let get_exam_fees = document.getElementById("exam_fees").value;
+                let get_exam_attendance = document.getElementById("exam_attendance").value;
+                let get_any_fees_concession = document.getElementById("any_fees_concession").value;
+                let get_date = document.getElementById("datepicker").value;
+                let get_principal_code = document.getElementById("principal_code").value;
+                let get_principal_name = document.getElementById("principal_name").value;
+                let get_online_fees = document.getElementById("online_fees").value;
+                let get_remark = document.getElementById("remark").value;
+                let get_principal_approval = document.getElementById("principal_approval").value;
+                let er = document.querySelector("#error00");
+            
+                if (get_registration_number === "") {
+                    er.innerHTML = "Enter Registration Number";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_exam_fees === "") {
+                    er.innerHTML = "Select Exam Fees Type";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_exam_attendance === "") {
+                    er.innerHTML = "Enter Exam Attendance %";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_any_fees_concession === "") {
+                    er.innerHTML = "Enter Any Fees Concession";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_date === "") {
+                    er.innerHTML = "Select the Date";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_principal_code === "") {
+                    er.innerHTML = "Enter Principal Code";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_principal_name === "") {
+                    er.innerHTML = "Enter Principal Name";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_online_fees === "") {
+                    er.innerHTML = "Enter Online Fees";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_remark === "") {
+                    er.innerHTML = "Enter Remark";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else if (get_principal_approval === "") {
+                    er.innerHTML = "Select Principal Status";
+                    er.style.display = "block";
+                    window.location.href = "#exam_registration";
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "/exam_registration",
+                        data: {
+                            send_registration_number: get_registration_number,
+                            send_exam_fees: get_exam_fees,
+                            send_exam_attendance: get_exam_attendance,
+                            send_any_fees_concession: get_any_fees_concession,
+                            send_date: get_date,
+                            send_principal_code: get_principal_code,
+                            send_principal_name: get_principal_name,
+                            send_online_fees: get_online_fees,
+                            send_remark: get_remark,
+                            send_principal_approval: get_principal_approval,
+                            csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+                        },
+                        success: function (response) {
+                            if (response === "Save") {
+                                er.setAttribute("class", "text-center alert alert-success");
+                                er.innerHTML = "Form submission successful";
+                                er.style.display = "block";
+                                window.location.href = "#exam_registration";
+            
+                                setTimeout(() => {
+                                    window.location.href = "/exam_registration";
+                                }, 4000);
+                            } else {
+                                alert("Oops, something went wrong");
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + error);
+                        }
+                    });
+                }
+            }
+            
+        </script>
         <script>
             $(function(){
          $("#datepicker").datepicker({

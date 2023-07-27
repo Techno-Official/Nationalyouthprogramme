@@ -1,0 +1,11 @@
+# Ignore the SQLite database file
+db.sqlite3
+
+# Ignore log files
+*.log
+
+# Ignore build directories
+build/
+
+# Ignore temporary files
+*.tmp
