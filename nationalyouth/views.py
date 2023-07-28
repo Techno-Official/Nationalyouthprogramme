@@ -122,7 +122,29 @@ def forgot_password(request):
 #==================================================================================================
 #======================================= About Page ===============================================
 def about_us(request):
-    return render(request,'Main/about.html')
+    def get_ip(request):
+        address = request.META.get('HTTP_X_FORWAREDED_FOR')
+        if address:
+            ip = address.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    ip=get_ip(request)
+    u=Visitor_IP(visitor_ip=ip)
+    result = Visitor_IP.objects.filter(Q(visitor_ip__contains=ip))
+    if len(result)==1:
+        print('User Exist')
+    elif len(result)>1:
+        print("User Exist more....")
+    else:
+        u.save()
+        print("user is unqiue")
+    count=Visitor_IP.objects.all().count()
+
+    data={
+        'count':count,
+    }
+    return render(request,'Main/about.html',data)
 #=================================================================================================
 #=================================================================================================
 
@@ -132,7 +154,29 @@ def about_us(request):
 #===================================================================================================
 #======================================= Gallery Page ==============================================
 def gallery(request):
-    return render(request,'Main/skill_photos.html')
+    def get_ip(request):
+        address = request.META.get('HTTP_X_FORWAREDED_FOR')
+        if address:
+            ip = address.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    ip=get_ip(request)
+    u=Visitor_IP(visitor_ip=ip)
+    result = Visitor_IP.objects.filter(Q(visitor_ip__contains=ip))
+    if len(result)==1:
+        print('User Exist')
+    elif len(result)>1:
+        print("User Exist more....")
+    else:
+        u.save()
+        print("user is unqiue")
+    count=Visitor_IP.objects.all().count()
+
+    data={
+        'count':count,
+    }
+    return render(request,'Main/skill_photos.html',data)
 #=================================================================================================
 #=================================================================================================
 
@@ -141,7 +185,29 @@ def gallery(request):
 #===================================================================================================
 #======================================= Sector Page ===============================================
 def sector(request):
-    return render(request,'Main/sectors.html')
+    def get_ip(request):
+        address = request.META.get('HTTP_X_FORWAREDED_FOR')
+        if address:
+            ip = address.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    ip=get_ip(request)
+    u=Visitor_IP(visitor_ip=ip)
+    result = Visitor_IP.objects.filter(Q(visitor_ip__contains=ip))
+    if len(result)==1:
+        print('User Exist')
+    elif len(result)>1:
+        print("User Exist more....")
+    else:
+        u.save()
+        print("user is unqiue")
+    count=Visitor_IP.objects.all().count()
+
+    data={
+        'count':count,
+    }
+    return render(request,'Main/sectors.html',data)
 #===================================================================================================
 #===================================================================================================
 
@@ -151,7 +217,70 @@ def sector(request):
 #===================================================================================================
 #======================================= Cotanct Page ==============================================
 def contact_us(request):
-    return render(request,'Main/contact.html')
+    def get_ip(request):
+        address = request.META.get('HTTP_X_FORWAREDED_FOR')
+        if address:
+            ip = address.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    ip=get_ip(request)
+    u=Visitor_IP(visitor_ip=ip)
+    result = Visitor_IP.objects.filter(Q(visitor_ip__contains=ip))
+    if len(result)==1:
+        print('User Exist')
+    elif len(result)>1:
+        print("User Exist more....")
+    else:
+        u.save()
+        print("user is unqiue")
+    count=Visitor_IP.objects.all().count()
+    error_message = None
+    value = None
+
+    if request.method == 'POST':
+        full_name = request.POST.get("full_name")
+        email = request.POST.get("email")
+        mobile_number = request.POST.get("mobile_number")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+        contact_id = random.randint(00000000,99999999)
+        value = {
+          'full_name' : full_name,
+          'email':email,
+          'mobile_number':mobile_number,
+          'subject':subject,
+          'message':message
+        }
+        save_data = Contact_us(
+            contact_id=contact_id,
+            full_name=full_name,
+            email=email,
+            mobile_number=mobile_number,
+            subject=subject,
+            message = message,
+        )
+        if(not full_name):
+            error_message = "Full Name is Required !!"
+        elif not email:
+            error_message = "Email is Required !!"
+        elif not mobile_number:
+            error_message = "Mobile No. is Required !!"
+        elif not subject:
+            error_message = "Subject is Required !!"
+        elif not message:
+            error_message = "Write some Message !!"
+        if not error_message:
+            save_data.save()
+            messages.success(request, 'Your Response Submitted Successfully')
+            return redirect('contact_us')
+
+    data={
+        'count':count,
+        'value':value,
+        'error':error_message,
+    }
+    return render(request,'Main/contact.html',data)
 #===================================================================================================
 #===================================================================================================
 
@@ -160,7 +289,29 @@ def contact_us(request):
 #===================================================================================================
 #======================================= News Page =================================================
 def news(request):
-    return render(request,'Main/latest_updates.html')
+    def get_ip(request):
+        address = request.META.get('HTTP_X_FORWAREDED_FOR')
+        if address:
+            ip = address.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    ip=get_ip(request)
+    u=Visitor_IP(visitor_ip=ip)
+    result = Visitor_IP.objects.filter(Q(visitor_ip__contains=ip))
+    if len(result)==1:
+        print('User Exist')
+    elif len(result)>1:
+        print("User Exist more....")
+    else:
+        u.save()
+        print("user is unqiue")
+    count=Visitor_IP.objects.all().count()
+
+    data={
+        'count':count,
+    }
+    return render(request,'Main/latest_updates.html',data)
 #===================================================================================================
 #===================================================================================================
 
@@ -178,6 +329,14 @@ def course_and_college(request):
 #===================================================================================================
 
 
+def generate_roll_number():
+    last_roll_number = Admission_Registration.objects.order_by('-id').first()
+    if last_roll_number:
+        last_roll_number = int(last_roll_number.registration_number)
+        new_roll_number = str(last_roll_number + 1)
+    else:
+        new_roll_number = '1000'
+    return new_roll_number
 
 #===================================================================================================
 #======================================= Admission Registration Page ===============================
@@ -189,6 +348,7 @@ def admission_registration(request):
     reg_id = random.randint(00000000, 99999999)
     while Admission_Registration.objects.filter(registration_number=reg_id).exists():
         reg_id = random.randint(00000000, 99999999)
+    
 
     registrationNum=request.POST.get("registrationNum")
     nameOfStudent=request.POST.get("nameOfStudent")
@@ -209,7 +369,7 @@ def admission_registration(request):
         principal_approval_id=Status.objects.get(id=principalApproval)
         
         add_admission_registration = Admission_Registration(
-            registration_number = registrationNum,
+            registration_number = generate_roll_number(),
             name_of_student = nameOfStudent,
             address = address,
             id_number = idNumber,
@@ -219,7 +379,7 @@ def admission_registration(request):
             district = district,
             course_name = course_name_id,
             admission_fees = admissionFees,
-            admission_month_and_year = admission_date,
+            admission_date = admission_date,
             principal_approval = principal_approval_id,
         )
 
@@ -229,7 +389,7 @@ def admission_registration(request):
         'all_college_name':all_college_name,
         'all_course_name':all_course_name,
         'all_status':all_status,
-        'reg_id':reg_id,
+        'reg_id':generate_roll_number(),
     }
     return render(request,'internal/admission_registration.html',data)
 #===================================================================================================
@@ -248,12 +408,12 @@ def exam_registration(request):
     search_student_data = ''
     search_student_data_error = ''
     register_number_allready=""
-    admissionsFormdata = None
+    get_search_registration_number = None
+    exmd=None
     if request.method=='GET':
         get_search_registration_number=request.GET.get("search_registration_number")
         if get_search_registration_number:
             admissions = Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
-            admissionsFormdata = Mark_List_Registration.objects.filter(registration_number=get_search_registration_number).first()
             exmd = Exam_Registration.objects.filter(registration_number=get_search_registration_number).first()
             if exmd:
                 register_number_allready="Registration Number already exist in Mark Registration !!"
@@ -281,33 +441,50 @@ def exam_registration(request):
         principal_name and online_fees and remark and principal_approval:
         exam_fee_id=Exam_Fees_Type.objects.get(id=exam_fees)
         principal_approval_id=Status.objects.get(id=principal_approval)
+        regiter_number_checking=Exam_Registration.objects.filter(registration_number=registration_number).first()
+        if regiter_number_checking:
+            
+            regiter_number_checking.registration_number = registration_number
+            regiter_number_checking.exam_fees = exam_fee_id
+            regiter_number_checking.exam_attendance = exam_attendance
+            regiter_number_checking.any_fees_concession = any_fees_concession
+            regiter_number_checking.date = date
+            regiter_number_checking.principal_code = principal_code
+            regiter_number_checking.principal_name = principal_name
+            regiter_number_checking.online_fees = online_fees
+            regiter_number_checking.remark = remark
+            regiter_number_checking.principal_approval = principal_approval_id
+            regiter_number_checking.save()
+            return HttpResponse("Save")
+            
+        else:
+            add_exam_registration = Exam_Registration(
+                registration_number = registration_number,
+                exam_fees = exam_fee_id,
+                exam_attendance = exam_attendance,
+                any_fees_concession = any_fees_concession,
+                date = date,
+                principal_code = principal_code,
+                principal_name = principal_name,
+                online_fees = online_fees,
+                remark = remark,
+                principal_approval = principal_approval_id,
+            )
 
-        add_exam_registration = Exam_Registration(
-            registration_number = registration_number,
-            exam_fees = exam_fee_id,
-            exam_attendance = exam_attendance,
-            any_fees_concession = any_fees_concession,
-            date = date,
-            principal_code = principal_code,
-            principal_name = principal_name,
-            online_fees = online_fees,
-            remark = remark,
-            principal_approval = principal_approval_id,
-        )
-
-        add_exam_registration.save()
-        return HttpResponse("Save")
+            add_exam_registration.save()
+            return HttpResponse("Save")
     data = {
         'all_status':all_status,
         'all_exam_fee':all_exam_fee,
         'search_student_data':search_student_data,
         'search_student_data_error':search_student_data_error,
         'get_search_registration_number':get_search_registration_number,
-        "admissionsFormdata":admissionsFormdata,
-        "register_number_allready":register_number_allready
+        "register_number_allready":register_number_allready,
+        "exmd":exmd
 
     }
     return render(request,'internal/exam_registration.html',data)
+
 #===================================================================================================
 #===================================================================================================
 
@@ -468,11 +645,6 @@ def mark_registration(request):
     total_mark_1=request.POST.get("send_total_mark_1")
     total_mark_obtained=request.POST.get("send_total_mark_obtained")
     practical_mark=request.POST.get("send_practical_mark")
-
-    print(viva_mark)
-    print(total_mark_1)
-    print(total_mark_obtained)
-    print(practical_mark)
     
     grade_1=request.POST.get("send_grade_1")
     grade_2=request.POST.get("send_grade_2")
@@ -555,6 +727,10 @@ def mark_registration(request):
             pc_geting_number_rnd.total_11=total_11
             pc_geting_number_rnd.total_12=total_12
             pc_geting_number_rnd.viva_mark=viva_mark
+
+            pc_geting_number_rnd.total_mark_1=total_mark_1
+            pc_geting_number_rnd.total_mark_obtained=total_mark_obtained
+            pc_geting_number_rnd.practical_mark=practical_mark
            
             pc_geting_number_rnd.grade_1=grade_1
             pc_geting_number_rnd.grade_2=grade_2
