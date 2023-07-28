@@ -91,32 +91,39 @@
             <div class="col-12 col-md-6 col-xl-7">
                 <div class="widget bg-white shadow contactFormWidget ml-xl-n5 mb-7 mb-md-5">
                     <div class="pt-8 pb-10 px-4 px-md-6 px-xl-8">
+                        {% include 'Main/error_messages.html' %}
                         <h2 class="fwSemiBold h3Medium mb-4">Leave your message</h2>
-                        <form action="#" class="commentForm">
+                        <form action="#" class="commentForm" method="post">
+                            {% csrf_token %}
                             <div class="row mx-n2">
                                 <div class="col-12 col-sm-6 col-md-12 col-lg-6 px-2">
                                     <div class="form-group">
-                                        <input type="text" class="form-control d-block w-100" placeholder="Name">
+                                        <input value="{{value.full_name}}" type="text" class="form-control d-block w-100" name="full_name" placeholder="Full Name">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-12 col-lg-6 px-2">
                                     <div class="form-group">
-                                        <input type="email" class="form-control d-block w-100" placeholder="Email">
+                                        <input value="{{value.email}}" type="email" class="form-control d-block w-100" name="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-6 px-2">
+                                    <div class="form-group">
+                                        <input value="{{value.mobile_number}}" type="text" class="form-control d-block w-100" name="mobile_number" placeholder="Mobile Number">
+                                    </div>
+                                </div>
+                                <div class="col-6 px-2">
+                                    <div class="form-group">
+                                        <input value="{{value.subject}}" type="text" class="form-control d-block w-100" name="subject" placeholder="Subject">
                                     </div>
                                 </div>
                                 <div class="col-12 px-2">
                                     <div class="form-group">
-                                        <input type="text" class="form-control d-block w-100" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-12 px-2">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100 d-block"
+                                        <textarea name="message" class="form-control w-100 d-block"
                                             placeholder="Write your message&hellip;"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button"
+                            <button type="submit"
                                 class="btn btnTheme d-flex font-weight-bold text-capitalize position-relative border-0 p-0 mt-2 btnWidthSmall"
                                 data-hover="Send Message">
                                 <span class="d-block btnText">Send Message</span>

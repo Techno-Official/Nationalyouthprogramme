@@ -9,6 +9,22 @@ from django.contrib.auth.models import AbstractUser
 
 
 
+#====================================== Contact Model ============================================
+class Contact_us(models.Model):
+    contact_id = models.CharField(max_length=255)
+    full_name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    mobile_number = models.CharField(max_length=255)
+    message = models.TextField(max_length=250)
+    date_and_time = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.full_name
+#==================================================================================================
+#==================================================================================================
+
+
+
 #====================================== User Role Model ==========================================
 class User_Role(models.Model):
     user_role = models.CharField(max_length=250)
@@ -247,7 +263,7 @@ class Nature_of_Leave(models.Model):
 
 #====================================== Admission Registration Model ==============================
 class Admission_Registration(models.Model):
-    registration_number = models.CharField(max_length=250)
+    registration_number = models.IntegerField(unique=True)
     name_of_student = models.CharField(max_length=250)
     address = models.TextField(max_length=250,default='',null=True,blank=True)
     id_number = models.CharField(max_length=250)
@@ -260,8 +276,12 @@ class Admission_Registration(models.Model):
     admission_date = models.CharField(max_length=250)
     principal_approval = models.ForeignKey(Status, on_delete = models.CASCADE,null=True,blank=True) #select option filed
     date_and_time = models.DateTimeField(auto_now_add=True)
-    def __str__(self):
-        return self.registration_number
+    
+    # def get_next_roll_number(self):
+    #     next_roll_number = self.registration_number + 1
+    #     # self.registration_number = next_roll_number
+    #     # self.save()
+    #     return next_roll_number
 #==================================================================================================
 #==================================================================================================
 

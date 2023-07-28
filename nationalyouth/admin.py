@@ -76,6 +76,10 @@ class AdminUser_Role(admin.ModelAdmin):
     list_display = ['id','user_role','date_and_time']
 
 
+class AdminContact_us(admin.ModelAdmin):
+    list_display = ['id','contact_id','full_name','email','subject','mobile_number','date_and_time']
+
+
 class AdminAdmission_Registration(admin.ModelAdmin):
     list_display = ['id','registration_number','name_of_student','address', 'id_number','date_of_birth','mobile_number',\
                     'college_name','district','course_name','admission_fees','admission_date','principal_approval','date_and_time']
@@ -302,6 +306,7 @@ admin.site.register(Fee_Type,AdminFee_Type)
 admin.site.register(Nature_of_Leave,AdminNature_of_Leave)
 admin.site.register(CustomeUser,AdminCustomeuser)
 admin.site.register(User_Role,AdminUser_Role)
+admin.site.register(Contact_us,AdminContact_us)
 
 
 
