@@ -128,24 +128,26 @@ LOGIN_URL="/dologin"
 
 
 JAZZMIN_SETTINGS = {
-    "site_title": "National Youth Programm",
-    "site_header": "National Youth Programm",
-    "site_brand": "National Youth Programm",
+    "site_title": "National Youth Programme",
+    "site_header": "National Youth Programme",
+    "site_brand": "National Youth Programme",
     "site_icon": "images/favicon.png",
     # Add your own branding here
-    "site_logo": None,
-    "welcome_sign": "Welcome to the National Youth Programm",
+    "site_logo": 'logo2.png',
+    "welcome_sign": "Welcome to the National Youth Programme",
     # Copyright on the footer
-    "copyright": "National Youth Programm",
+    "copyright": "National Youth Programme",
     "user_avatar": None,
     "custom_css": "bootstrap-dark.css",
+    "navigation_expanded": True,
+
     ############
     # Top Menu #
     ############
     # Links to put along the top menu
     "topmenu_links": [
         # Url that gets reversed (Permissions can be added)
-        {"name": "National Youth Programm", "url": "home", "permissions": ["auth.view_user"]},
+        {"name": "National Youth Programme", "url": "home", "permissions": ["auth.view_user"]},
         # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
     ],
