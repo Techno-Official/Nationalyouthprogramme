@@ -9,7 +9,8 @@
 }
 
 brand-link navbar-success:hover{
-    background-color: #00bc8c !important;
+    background-color: #fafefd !important;
+    width: 500px;
 }
 
 #id_tags {
@@ -24,4 +25,14 @@ brand-link navbar-success:hover{
 
 .alert-success a{
 color: #ffffff !important;
+}
+
+.brand-text{
+    font-size: 15px!important ;
+}
+
+
+.brand-text:hover{
+    font-size: 15px!important ;
+    color: white!important ;
 }
