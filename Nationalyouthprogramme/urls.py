@@ -21,6 +21,7 @@ urlpatterns = [
     path('sector',sector,name='sector'),
     path('contact_us',contact_us,name='contact_us'),
     path('news',news,name='news'),
+    path('news_details',news_details,name='news_details'),
 
 
     path('course_and_college',course_and_college,name='course_and_college'),

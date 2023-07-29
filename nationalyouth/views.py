@@ -74,8 +74,6 @@ def homepage(request):
 def user_login(request):
     error_message = None
     value = None
-    
-    
     if request.method=="POST":
         username = request.POST.get("username")
         get_password = request.POST.get("password")
@@ -83,9 +81,6 @@ def user_login(request):
   
         get_user = CustomeUser.objects.filter(username=username).first()
         has_pwd=check_password(get_password,get_user.password)
-        print(get_user.password)
-        print(has_pwd)
-
         if has_pwd == True and get_user:
             login(request,get_user)
             return redirect('homepage')
@@ -312,6 +307,38 @@ def news(request):
         'count':count,
     }
     return render(request,'Main/latest_updates.html',data)
+#===================================================================================================
+#===================================================================================================
+
+
+
+
+#===================================================================================================
+#======================================= News Detail Page ==========================================
+def news_details(request):
+    def get_ip(request):
+        address = request.META.get('HTTP_X_FORWAREDED_FOR')
+        if address:
+            ip = address.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    ip=get_ip(request)
+    u=Visitor_IP(visitor_ip=ip)
+    result = Visitor_IP.objects.filter(Q(visitor_ip__contains=ip))
+    if len(result)==1:
+        print('User Exist')
+    elif len(result)>1:
+        print("User Exist more....")
+    else:
+        u.save()
+        print("user is unqiue")
+    count=Visitor_IP.objects.all().count()
+
+    data={
+        'count':count,
+    }
+    return render(request,'Main/news_details.html',data)
 #===================================================================================================
 #===================================================================================================
 
