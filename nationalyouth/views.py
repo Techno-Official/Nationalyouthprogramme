@@ -210,7 +210,7 @@ def sector(request):
 
 
 #===================================================================================================
-#======================================= Cotanct Page ==============================================
+#======================================= Contact Page ==============================================
 def contact_us(request):
     def get_ip(request):
         address = request.META.get('HTTP_X_FORWAREDED_FOR')
@@ -276,6 +276,57 @@ def contact_us(request):
         'error':error_message,
     }
     return render(request,'Main/contact.html',data)
+#===================================================================================================
+#===================================================================================================
+
+
+
+#===================================================================================================
+#======================================= Home Contact Page =========================================
+def home_contact_us(request):
+    error_message = None
+    value = None
+    if request.method == 'POST':
+        full_name = request.POST.get("full_name")
+        email = request.POST.get("email")
+        mobile_number = request.POST.get("mobile_number")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+        contact_id = random.randint(00000000,99999999)
+        value = {
+          'full_name' : full_name,
+          'email':email,
+          'mobile_number':mobile_number,
+          'subject':subject,
+          'message':message
+        }
+        save_data = Contact_us(
+            contact_id=contact_id,
+            full_name=full_name,
+            email=email,
+            mobile_number=mobile_number,
+            subject=subject,
+            message = message,
+        )
+        if(not full_name):
+            error_message = "Full Name is Required !!"
+        elif not email:
+            error_message = "Email is Required !!"
+        elif not mobile_number:
+            error_message = "Mobile No. is Required !!"
+        elif not subject:
+            error_message = "Subject is Required !!"
+        elif not message:
+            error_message = "Write some Message !!"
+        if not error_message:
+            save_data.save()
+            messages.success(request, 'Your Response Submitted Successfully')
+            return redirect('/#contact_us')
+    data={
+        'value':value,
+        'error':error_message,
+    }
+    return render(request,'Main/homepage.html',data)
 #===================================================================================================
 #===================================================================================================
 
