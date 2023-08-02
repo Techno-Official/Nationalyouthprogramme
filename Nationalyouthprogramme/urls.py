@@ -20,6 +20,7 @@ urlpatterns = [
     path('gallery',gallery,name='gallery'),
     path('sector',sector,name='sector'),
     path('contact_us',contact_us,name='contact_us'),
+    path('home_contact_us',home_contact_us,name='home_contact_us'),
     path('news',news,name='news'),
     path('news_details',news_details,name='news_details'),
 
