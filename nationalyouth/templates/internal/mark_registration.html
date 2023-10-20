@@ -82,6 +82,7 @@
                                  {% comment %} {% if search_student_data.registration_number %}
                                  {% else %}
                                  {% endif %} {% endcomment %}
+                                 <h4>Admission Registration</h4>
                                  <li class="list-group-item">Registration number :
                                     {{search_student_data.registration_number}}
                                  </li>
@@ -115,6 +116,34 @@
                                  </li>
                                  <li class="list-group-item">Created Date :
                                     {{search_student_data.date_and_time}}
+                                 </li>
+                                 <h4>Exam Registration</h4>
+                                 <li class="list-group-item">Exam Fees :
+                                    {{search_get_exam.exam_fees}}
+                                 </li>
+                                 <li class="list-group-item">Exam Attendance :
+                                    {{search_get_exam.exam_attendance}}
+                                 </li>
+                                 <li class="list-group-item">Any fees concession :
+                                    {{search_get_exam.any_fees_concession}}
+                                 </li>
+                                 <li class="list-group-item">Date :
+                                    {{search_get_exam.date}}
+                                 </li>
+                                 <li class="list-group-item">Principal code :
+                                    {{search_get_exam.principal_code}}
+                                 </li>
+                                 <li class="list-group-item">Principal name:
+                                    {{search_get_exam.principal_name}}
+                                 </li>
+                                 <li class="list-group-item">Online fees:
+                                    {{search_get_exam.online_fees}}
+                                 </li>
+                                 <li class="list-group-item">Remark:
+                                    {{search_get_exam.remark}}
+                                 </li>
+                                 <li class="list-group-item">Principal approval:
+                                    {{search_get_exam.principal_approval}}
                                  </li>
                               </ul>
                            </div>
