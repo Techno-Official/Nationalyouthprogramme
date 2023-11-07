@@ -69,6 +69,8 @@
                         <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
                            <ul class="list-unstyled mb-0 hdDropdownList">
                               {% if user.is_authenticated and user.user_role.user_role == "Principal" %}
+                              <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course Admission</a>
+                              </li>
                               <li><a class="dropdown-item" href="/admission_registration">Admission
                                  Registration</a>
                               </li>
@@ -83,6 +85,7 @@
                                  Affiliation</a>
                               </li>
                               {% elif user.is_authenticated and user.user_role.user_role == "Officer" %}
+                              <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course Admission</a>
                               <li><a class="dropdown-item" href="/admission_registration">Admission
                                  Registration</a>
                               </li>
@@ -99,6 +102,7 @@
                               <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a></li>
                               <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
                               {% elif user.is_authenticated and user.user_role.user_role == "Administrator" %}
+                              <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course Admission</a>
                               <li><a class="dropdown-item" href="/admission_registration">Admission
                                  Registration</a>
                               </li>

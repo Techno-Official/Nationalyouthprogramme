@@ -261,6 +261,26 @@ class Nature_of_Leave(models.Model):
 
 
 
+#====================================== VTC Course Admission Registration Model =================
+class VTC_Course_Admission_Registration(models.Model):
+    registration_number = models.IntegerField(unique=True)
+    name_of_student = models.CharField(max_length=250)
+    address = models.TextField(max_length=250,default='',null=True,blank=True)
+    id_number = models.CharField(max_length=250)
+    date_of_birth = models.CharField(max_length=250)
+    mobile_number = models.CharField(max_length=250)
+    college_name = models.ForeignKey(College_Name, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    district = models.CharField(max_length=250)     
+    course_name = models.ForeignKey(Course_Name, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    admission_fees = models.CharField(max_length=250)
+    admission_date = models.CharField(max_length=250)
+    principal_approval = models.ForeignKey(Status, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    date_and_time = models.DateTimeField(auto_now_add=True)
+#==================================================================================================
+#==================================================================================================
+
+
+
 #====================================== Admission Registration Model ==============================
 class Admission_Registration(models.Model):
     registration_number = models.IntegerField(unique=True)
@@ -276,12 +296,6 @@ class Admission_Registration(models.Model):
     admission_date = models.CharField(max_length=250)
     principal_approval = models.ForeignKey(Status, on_delete = models.CASCADE,null=True,blank=True) #select option filed
     date_and_time = models.DateTimeField(auto_now_add=True)
-    
-    # def get_next_roll_number(self):
-    #     next_roll_number = self.registration_number + 1
-    #     # self.registration_number = next_roll_number
-    #     # self.save()
-    #     return next_roll_number
 #==================================================================================================
 #==================================================================================================
 
