@@ -419,6 +419,67 @@ def generate_roll_number():
 #===================================================================================================
 #======================================= Admission Registration Page ===============================
 @login_required
+def vtc_course_admission(request):
+    all_college_name = College_Name.objects.all()
+    all_course_name = Course_Name.objects.all()
+    all_status = Status.objects.all()
+    reg_id = random.randint(00000000, 99999999)
+    while Admission_Registration.objects.filter(registration_number=reg_id).exists():
+        reg_id = random.randint(00000000, 99999999)
+    
+
+    registrationNum=request.POST.get("registrationNum")
+    nameOfStudent=request.POST.get("nameOfStudent")
+    address=request.POST.get("address")
+    idNumber=request.POST.get("idNumber")
+    date=request.POST.get("date")
+    mobileNumber=request.POST.get("mobileNumber")
+    collegeName=request.POST.get("collegeName")
+    district=request.POST.get("district")
+    courseName=request.POST.get("courseName")
+    admissionFees=request.POST.get("admissionFees")
+    admission_date=request.POST.get("admission_date")
+    principalApproval=request.POST.get("principalApproval")
+
+    if registrationNum and nameOfStudent and address and idNumber and date and mobileNumber and collegeName and district and courseName and admissionFees and admission_date and principalApproval:
+        college_name_id=College_Name.objects.get(id=collegeName)
+        course_name_id=Course_Name.objects.get(id=courseName)
+        principal_approval_id=Status.objects.get(id=principalApproval)
+        
+        add_vtc_course_admission_registration = VTC_Course_Admission_Registration(
+            registration_number = generate_roll_number(),
+            name_of_student = nameOfStudent,
+            address = address,
+            id_number = idNumber,
+            date_of_birth = date,
+            mobile_number = mobileNumber,
+            college_name = college_name_id,
+            district = district,
+            course_name = course_name_id,
+            admission_fees = admissionFees,
+            admission_date = admission_date,
+            principal_approval = principal_approval_id,
+        )
+
+        add_vtc_course_admission_registration.save()
+        return HttpResponse("Save")
+    data = {
+        'all_college_name':all_college_name,
+        'all_course_name':all_course_name,
+        'all_status':all_status,
+        'reg_id':generate_roll_number(),
+    }
+    return render(request,'internal/vtc_course_admission.html',data)
+#===================================================================================================
+#===================================================================================================
+
+
+
+
+
+#===================================================================================================
+#======================================= Admission Registration Page ===============================
+@login_required
 def admission_registration(request):
     all_college_name = College_Name.objects.all()
     all_course_name = Course_Name.objects.all()

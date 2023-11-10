@@ -26,6 +26,7 @@ urlpatterns = [
 
 
     path('course_and_college',course_and_college,name='course_and_college'),
+    path('vtc_course_admission',vtc_course_admission,name='vtc_course_admission'),
     path('admission_registration',admission_registration,name='admission_registration'),
     path('exam_registration',exam_registration,name='exam_registration'),
     path('mark_registration',mark_registration,name='mark_registration'),
