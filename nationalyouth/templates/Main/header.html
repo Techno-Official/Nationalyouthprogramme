@@ -86,6 +86,8 @@
                                                 Affiliation</a>
                                         </li>
                                         {% elif user.is_authenticated and user.user_role.user_role == "Officer" %}
+                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="/vtc_course_admission">VTC Admission
                                                 Portal</a>
                                         <li><a class="dropdown-item" href="/admission_registration">Add on Admission
@@ -101,14 +103,15 @@
                                         <li><a class="dropdown-item" href="/application_for_affiliation">Application for
                                                 Affiliation</a>
                                         </li>
-                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
-                                        </li>
+
                                         <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
                                         {% elif user.is_authenticated and user.user_role.user_role == "Administrator" %}
-                                        <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course
-                                                Admission</a>
-                                        <li><a class="dropdown-item" href="/admission_registration">Admission
-                                                Registration</a>
+                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/vtc_course_admission">VTC Admission
+                                                Portal</a>
+                                        <li><a class="dropdown-item" href="/admission_registration">Add on Admission
+                                                Portal</a>
                                         </li>
                                         <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
                                         </li>
@@ -120,12 +123,10 @@
                                         <li><a class="dropdown-item" href="/application_for_affiliation">Application for
                                                 Affiliation</a>
                                         </li>
-                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
-                                        </li>
+
                                         <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
                                         {% else %}
-                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
-                                        </li>
+
                                         <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
                                         <!-- <li><a class="dropdown-item" href="/student_marks">Student Marks</a></li> -->
                                         <!-- {% if user.user_role.user_role == "Officer" %}
@@ -144,24 +145,28 @@
                                     Administration</a>
                                 <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
                                     <ul class="list-unstyled mb-0 hdDropdownList">
-                                        <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
-                                 Accounts</a>
-                                 </li> -->
+                                        <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
+                                                Accounts</a>
+
+                                        </li>
                                         <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/e_office_student_register">E-Office Students
-                                 Register</a>
-                                 </li> -->
-                                        <!-- <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a></li> -->
+                                        <li><a class="dropdown-item" href="/e_office_student_register">E-Office
+                                                Students
+                                                Register</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="/e_office_queue_files">E-Office Queue
                                                 Files</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a></li> -->
+                                        <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="/e_employee_records">E-Employee Records</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/employee_service_book">Employee Service
-                                 Book</a>
-                                 </li> -->
+                                        <li><a class="dropdown-item" href="/employee_service_book">Employee Service
+                                                Book</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
                                                 Sanction</a>
                                         </li>
@@ -173,9 +178,11 @@
                                                 Live
                                                 Status</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a></li> -->
+                                        <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a>
+                                        </li>
                                         <li><a class="dropdown-item"
-                                                href="/e_student_certificate_verification">E-Students Certificate
+                                                href="/e_student_certificate_verification">E-Students
+                                                Certificate
                                                 Verification</a>
                                         </li>
                                         <li><a class="dropdown-item" href="/staff_work_alloted">Staff Work Allotment</a>
@@ -191,27 +198,29 @@
                                     Administration</a>
                                 <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
                                     <ul class="list-unstyled mb-0 hdDropdownList">
-                                        <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
-                                 Accounts</a>
-                                 </li> -->
+
                                         <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/e_office_student_register">E-Office Students
-                                 Register</a>
-                                 </li> -->
-                                        <!-- <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a></li> -->
+                                        <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
+                                                Accounts</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/e_office_student_register">E-Office Students
+                                                Register</a>
+                                        </li>
+
                                         <li><a class="dropdown-item" href="/e_office_queue_files">E-Office Queue
                                                 Files</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a></li> -->
+                                        <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="/e_employee_records">E-Employee Records</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/employee_service_book">Employee Service
-                                 Book</a>
-                                 </li> -->
-                                        <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
-                                                Sanction</a>
+                                        <li><a class="dropdown-item" href="/employee_service_book">Employee Service
+                                                Book</a>
                                         </li>
+
                                         <li><a class="dropdown-item" href="/e_employee_daily_work_statement">E-Employee
                                                 Daily
                                                 Work Statement</a>
@@ -220,12 +229,18 @@
                                                 Live
                                                 Status</a>
                                         </li>
-                                        <!-- <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a></li> -->
+
                                         <li><a class="dropdown-item"
-                                                href="/e_student_certificate_verification">E-Students Certificate
+                                                href="/e_student_certificate_verification">E-Students
+                                                Certificate
                                                 Verification</a>
                                         </li>
                                         <li><a class="dropdown-item" href="/staff_work_alloted">Staff Work Allotment</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
+                                                Sanction</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a>
                                         </li>
                                     </ul>
                                 </div>
