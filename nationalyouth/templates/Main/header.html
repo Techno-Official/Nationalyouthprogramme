@@ -7,125 +7,135 @@
 <!--------------------------------------------------------------------------------------------------->
 {% load static %}
 <header id="pageHeader" class="bg-white">
-   <div class="hdTopBar py-2 py-xl-3 pb-2" style="background-color: #3446cd; display: none; display: -webkit-box;">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-2 pt-4">
-               <a href="tel:1800 123 000">
-               <i class="fas fa-phone align-middle icn" style="color: yellow;">
-               <span class="sr-only">icon</span></i>
-               <span style="color: white;font-size: 15px;">Call on: 1800 123 000</span>
-               </a>
+    <div class="hdTopBar py-2 py-xl-3 pb-2" style="background-color: #3446cd; display: none; display: -webkit-box;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 pt-4">
+                    <a href="tel:1800 123 000">
+                        <i class="fas fa-phone align-middle icn" style="color: yellow;">
+                            <span class="sr-only">icon</span></i>
+                        <span style="color: white;font-size: 15px;">Call on: 1800 123 000</span>
+                    </a>
+                </div>
+                <div class="col-md-3 pt-4">
+                    <time datetime="2023-06-12">
+                        <i class="fa fa-clock align-middle icn" style="color: yellow;"><span
+                                class="sr-only">icon</span></i>
+                        <span style="color: white;font-size: 15px;">Mon – Fri (9:30 AM to 5:30 PM)
+                    </time>
+                </div>
+                <div class="col-md-4 pt-4"> <a>
+                        <i class="fas fa-phone align-middle icn" style="color: yellow;"><span
+                                class="sr-only">icon</span></i>
+                        <span style="color: white;font-size: 15px;">E-mail: officer@nationalyouthprogramme.in</span>
+                    </a>
+                </div>
+                <div class="col-md-3 pb-2">
+                    <button type="button"
+                        class="btn btnTheme d-flex font-weight-bold text-capitalize position-relative border-0 p-0 mt-2 btnWidthSmall"
+                        data-hover="Student Certificate Verification">
+                        <span class="d-block btnText">Student Certificate Verification</span>
+                    </button>
+                </div>
             </div>
-            <div class="col-md-3 pt-4">
-               <time datetime="2023-06-12">
-               <i class="fa fa-clock align-middle icn" style="color: yellow;"><span
-                  class="sr-only">icon</span></i>
-               <span style="color: white;font-size: 15px;">Mon – Fri (9:30 AM to 5:30 PM)
-               </time>
-            </div>
-            <div class="col-md-4 pt-4"> <a>
-               <i class="fas fa-phone align-middle icn" style="color: yellow;"><span
-                  class="sr-only">icon</span></i>
-               <span style="color: white;font-size: 15px;">E-mail: officer@nationalyouthprogramme.in</span>
-               </a>
-            </div>
-            <div class="col-md-3 pb-2">
-               <button type="button"
-                  class="btn btnTheme d-flex font-weight-bold text-capitalize position-relative border-0 p-0 mt-2 btnWidthSmall"
-                  data-hover="Student Certificate Verification">
-               <span class="d-block btnText">Student Certificate Verification</span>
-               </button>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="hdFixerWrap py-2 py-md-3 py-xl-5 sSticky" style="background-color: #ffffff;">
-      <div class="container">
-         <nav class="navbar navbar-expand-md navbar-light p-0">
-            <div class="logo flex-shrink-0 ml-15 mr-6">
-               <a href="/">
-               <img width="80px" src="{% static 'main/images/homepage/leftlogo.png' %}" class="img-fluid"
-                  alt="egovt">
-               </a>
-            </div>
-            <div
-               class="hdNavWrap flex-grow-1 d-flex align-items-center justify-content-end justify-content-lg-start">
-               <div class="collapse navbar-collapse pageMainNavCollapse mt-2 mt-md-0" id="pageMainNavCollapse">
-                  <ul class="navbar-nav mainNavigation">
-                     <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href=" /" role="button" aria-haspopup="true" aria-expanded="false"
-                           style="color: #3446CD;">Home</a>
-                     </li>
-                     <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link" href="/about_us" role="button" aria-haspopup="true"
-                           aria-expanded="false" style="color: #3446CD;">About</a>
-                     </li>
-                     <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                           style="color: #3446CD;">Education and
-                        Training</a>
-                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
-                           <ul class="list-unstyled mb-0 hdDropdownList">
-                              {% if user.is_authenticated and user.user_role.user_role == "Principal" %}
-                              <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course Admission</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/admission_registration">Admission
-                                 Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/add_on_programme">Add-on Programme
-                                 (Colleges)</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/application_for_affiliation">Application for
-                                 Affiliation</a>
-                              </li>
-                              {% elif user.is_authenticated and user.user_role.user_role == "Officer" %}
-                              <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course Admission</a>
-                              <li><a class="dropdown-item" href="/admission_registration">Admission
-                                 Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/add_on_programme">Add-on Programme
-                                 (Colleges)</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/application_for_affiliation">Application for
-                                 Affiliation</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a></li>
-                              <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
-                              {% elif user.is_authenticated and user.user_role.user_role == "Administrator" %}
-                              <li><a class="dropdown-item" href="/vtc_course_admission">VTC Course Admission</a>
-                              <li><a class="dropdown-item" href="/admission_registration">Admission
-                                 Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/add_on_programme">Add-on Programme
-                                 (Colleges)</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/application_for_affiliation">Application for
-                                 Affiliation</a>
-                              </li>
-                              <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a></li>
-                              <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
-                              {% else %}
-                              <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a></li>
-                              <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
-                              <!-- <li><a class="dropdown-item" href="/student_marks">Student Marks</a></li> -->
-                              <!-- {% if user.user_role.user_role == "Officer" %}
+        </div>
+    </div>
+    <div class="hdFixerWrap py-2 py-md-3 py-xl-5 sSticky" style="background-color: #ffffff;">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light p-0">
+                <div class="logo flex-shrink-0 ml-15 mr-6">
+                    <a href="/">
+                        <img width="80px" src="{% static 'main/images/homepage/leftlogo.png' %}" class="img-fluid"
+                            alt="egovt">
+                    </a>
+                </div>
+                <div
+                    class="hdNavWrap flex-grow-1 d-flex align-items-center justify-content-end justify-content-lg-start">
+                    <div class="collapse navbar-collapse pageMainNavCollapse mt-2 mt-md-0" id="pageMainNavCollapse">
+                        <ul class="navbar-nav mainNavigation">
+                            <li class="nav-item dropdown ddohOpener">
+                                <a class="nav-link" href=" /" role="button" aria-haspopup="true" aria-expanded="false"
+                                    style="color: #3446CD;">Home</a>
+                            </li>
+                            <li class="nav-item dropdown ddohOpener">
+                                <a class="nav-link" href="/about_us" role="button" aria-haspopup="true"
+                                    aria-expanded="false" style="color: #3446CD;">About</a>
+                            </li>
+                            <li class="nav-item dropdown ddohOpener">
+                                <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: #3446CD;">Education and
+                                    Training</a>
+                                <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                                    <ul class="list-unstyled mb-0 hdDropdownList">
+                                        {% if user.is_authenticated and user.user_role.user_role == "Principal" %}
+                                        <li><a class="dropdown-item" href="/vtc_course_admission">VTC Admission
+                                                Portal</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/admission_registration">Add on Admission
+                                                Portal</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/add_on_programme">Add-on Programme
+                                                (Colleges)</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/application_for_affiliation">Application for
+                                                Affiliation</a>
+                                        </li>
+                                        {% elif user.is_authenticated and user.user_role.user_role == "Officer" %}
+                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/vtc_course_admission">VTC Admission
+                                                Portal</a>
+                                        <li><a class="dropdown-item" href="/admission_registration">Add on Admission
+                                                Portal</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/add_on_programme">Add-on Programme
+                                                (Colleges)</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/application_for_affiliation">Application for
+                                                Affiliation</a>
+                                        </li>
+
+                                        <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
+                                        {% elif user.is_authenticated and user.user_role.user_role == "Administrator" %}
+                                        <li><a class="dropdown-item" href="/course_and_college">Course and Colleges</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/vtc_course_admission">VTC Admission
+                                                Portal</a>
+                                        <li><a class="dropdown-item" href="/admission_registration">Add on Admission
+                                                Portal</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/exam_registration">Exam Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/mark_registration">Mark List
+                                                Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/add_on_programme">Add-on
+                                                Programme Affiliation
+                                                (Colleges)</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/application_for_affiliation">Application for
+                                                Affiliation(VTC)</a>
+                                        </li>
+
+                                        <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
+                                        {% else %}
+
+                                        <li><a class="dropdown-item" href="/pay_online_fees">Pay Online Fee</a></li>
+                                        <!-- <li><a class="dropdown-item" href="/student_marks">Student Marks</a></li> -->
+                                        <!-- {% if user.user_role.user_role == "Officer" %}
                                  <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
                                  
                                  {% endif %} -->
+<<<<<<< HEAD
                               {% endif %}
                            </ul>
                         </div>
@@ -270,7 +280,7 @@
             </div>
          </nav>
       </div>
-   </div>
+   </div>                    
 </header>
 <!-- Modal -->
 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
