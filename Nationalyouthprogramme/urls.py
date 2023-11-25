@@ -13,6 +13,7 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage,name='homepage'),
+    path('add_new_user', add_new_user,name='add_new_user'),
     path('dologin', user_login,name='dologin'),
     path('user_logout',user_logout,name='user_logout'),
     path('forgot_password',forgot_password,name='forgot_password'),
