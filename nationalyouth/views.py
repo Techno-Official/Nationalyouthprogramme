@@ -67,6 +67,80 @@ def homepage(request):
 
 
 
+
+#====================================================================================================
+#======================================= Add New User Page ==========================================
+
+
+def add_new_user(request):
+    error_message = None
+    value = None
+    all_user_role = User_Role.objects.all()
+    if request.method=="POST":
+        fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
+        email = request.POST.get("email")
+        get_username = request.POST.get("username")
+        get_password = request.POST.get("password")
+
+        get_user_role_id = request.POST.get("user_role")
+        get_user_group = request.POST.get("user_group")
+        hash_password = make_password(get_password)
+
+        get_user_role = User_Role.objects.get(id=get_user_role_id)
+
+        
+        
+        # user = CustomeUser.objects.get(username=get_username)
+
+        value = {
+            "fname": fname,
+            "lname": lname,
+            "email": email,
+            "username":get_username,
+        }
+        add_user = CustomeUser(
+            username = get_username,
+            first_name = fname,
+            last_name = lname,
+            email = email,
+            password = hash_password,
+            decrypt_password = get_password,
+            user_status = '1',
+            user_role = get_user_role,
+            is_staff = True,
+        )
+        if not fname:
+            error_message = "User First Name is Required !!"
+        elif not lname:
+            error_message = "User Last Name is Required !!"
+        elif not email:
+            error_message = "User Email is Required !!"
+        elif not get_username:
+            error_message = "Username is Required !!"
+        elif not get_password:
+            error_message = "User Password is Required !!"
+        elif CustomeUser.objects.filter(email=email).exists():
+            error_message = "Email Already Exists !!!"
+        elif CustomeUser.objects.filter(username=get_username).exists():
+            error_message = "Username Already Exists !!!"
+        if not error_message:
+            add_user.save()
+            # add_user.groups.set(user_group)
+            messages.success(request, "User Registered Successfully " )
+            return redirect('add_new_user')
+    data = {
+        'user_role':all_user_role,
+        'error':error_message,
+        'value':value,
+    }
+    return render(request, 'internal/add_new_user.html', data)
+
+#====================================================================================================
+
+
+
+
 #====================================================================================================
 #======================================= Login Page =================================================
 

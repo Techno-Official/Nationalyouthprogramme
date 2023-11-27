@@ -135,168 +135,152 @@
                                  <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
                                  
                                  {% endif %} -->
-                                        {% endif %}
-                                    </ul>
-                                </div>
-                            </li>
-                            {% if user.is_authenticated and user.user_role.user_role == "Officer" %}
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    style="color: #3446CD;">Official and
-                                    Administration</a>
-                                <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
-                                    <ul class="list-unstyled mb-0 hdDropdownList">
-                                        <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
-                                                Accounts</a>
-
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_student_register">E-Office
-                                                Students
-                                                Register</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_queue_files">E-Office Queue
-                                                Files</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_employee_records">E-Employee Records</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/employee_service_book">Employee Service
-                                                Book</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
-                                                Sanction</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_employee_daily_work_statement">E-Employee
-                                                Daily
-                                                Work Statement</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_employee_live_and_leave_status">E-Employee
-                                                Live
-                                                Status</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a>
-                                        </li>
-                                        <li><a class="dropdown-item"
-                                                href="/e_student_certificate_verification">E-Students
-                                                Certificate
-                                                Verification</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/staff_work_alloted">Staff Work Allotment</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            {% elif user.is_authenticated and user.user_role.user_role == "Administrator" %}
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    style="color: #3446CD;">Official and
-                                    Administration</a>
-                                <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
-                                    <ul class="list-unstyled mb-0 hdDropdownList">
-
-                                        <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
-                                                Accounts</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_student_register">E-Office Students
-                                                Register</a>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="/e_office_queue_files">E-Office Queue
-                                                Files</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_employee_records">E-Employee Records</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/employee_service_book">Employee Service
-                                                Book</a>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="/e_employee_daily_work_statement">E-Employee
-                                                Daily
-                                                Work Statement</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_employee_live_and_leave_status">E-Employee
-                                                Live
-                                                Status</a>
-                                        </li>
-
-                                        <li><a class="dropdown-item"
-                                                href="/e_student_certificate_verification">E-Students
-                                                Certificate
-                                                Verification</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/staff_work_alloted">Staff Work Allotment</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
-                                                Sanction</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            {% endif %}
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link" href="/news" role="button" aria-haspopup="true"
-                                    aria-expanded="false" style="color: #3446CD;">News</a>
-                            </li>
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link" href="/gallery" role="button" aria-haspopup="true"
-                                    aria-expanded="false" style="color: #3446CD;">Gallery</a>
-                            </li>
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link" href="/sector" role="button" aria-haspopup="true"
-                                    aria-expanded="false" style="color: #3446CD;">Sectors</a>
-                            </li>
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link" href="/contact_us" role="button" aria-haspopup="true"
-                                    aria-expanded="false" style="color: #3446CD;">Contact</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link" href="/user_logout" role="button" aria-haspopup="true"
-                                    aria-expanded="false" style="color: #3446CD;">Logout</a>
-                            </li>
-                            {% else %}
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link" href="/dologin" role="button" aria-haspopup="true"
-                                    aria-expanded="false" style="color: #3446CD;">Login</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <div class="logo flex-shrink-0 ml-15 mr-14">
-                        <!--<div class="logo flex-shrink-0 ml-3 mr-1 mr-xl-8 mr-xlwd-16">c-->
-                        <a href="/">
-                            <img width="80px" src="{% static 'main/images/homepage/rightlogo.png' %}" class="img-fluid"
-                                alt="egovt">
-                        </a>
-                    </div>
-                </div>
-                <div class="hdRighterWrap d-flex align-items-center justify-content-end">
-                    <button class="navbar-toggler pgNavOpener ml-1 bdrWidthAlter position-relative" type="button"
-                        data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </div>
+<<<<<<< HEAD
+                              {% endif %}
+                           </ul>
+                        </div>
+                     </li>
+                     {% if user.is_authenticated and user.user_role.user_role == "Officer" %}
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           style="color: #3446CD;">Official and
+                        Administration</a>
+                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                           <ul class="list-unstyled mb-0 hdDropdownList">
+                              <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
+                                 Accounts</a>
+                                 </li> -->
+                              <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/e_office_student_register">E-Office Students
+                                 Register</a>
+                                 </li> -->
+                              <!-- <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a></li> -->
+                              <li><a class="dropdown-item" href="/e_office_queue_files">E-Office Queue
+                                 Files</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a></li> -->
+                              <li><a class="dropdown-item" href="/e_employee_records">E-Employee Records</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/employee_service_book">Employee Service
+                                 Book</a>
+                                 </li> -->
+                              <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
+                                 Sanction</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/e_employee_daily_work_statement">E-Employee
+                                 Daily
+                                 Work Statement</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/e_employee_live_and_leave_status">E-Employee Live
+                                 Status</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a></li> -->
+                              <li><a class="dropdown-item"
+                                 href="/e_student_certificate_verification">E-Students Certificate
+                                 Verification</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/staff_work_alloted">Staff Work Allotment</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     {% elif user.is_authenticated and user.user_role.user_role == "Administrator" %}
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           style="color: #3446CD;">Official and
+                        Administration</a>
+                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                           <ul class="list-unstyled mb-0 hdDropdownList">
+                              <li><a class="dropdown-item" href="/add_new_user">Add New User</a>
+                                 </li>
+                              <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/e_office_student_register">E-Office Students
+                                 Register</a>
+                                 </li> -->
+                              <!-- <li><a class="dropdown-item" href="/e_office_email">E-Officer Email</a></li> -->
+                              <li><a class="dropdown-item" href="/e_office_queue_files">E-Office Queue
+                                 Files</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/e_office_files">E-Office Files</a></li> -->
+                              <li><a class="dropdown-item" href="/e_employee_records">E-Employee Records</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/employee_service_book">Employee Service
+                                 Book</a>
+                                 </li> -->
+                              <li><a class="dropdown-item" href="/e_office_file_sanction">E Office File
+                                 Sanction</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/e_employee_daily_work_statement">E-Employee
+                                 Daily
+                                 Work Statement</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/e_employee_live_and_leave_status">E-Employee Live
+                                 Status</a>
+                              </li>
+                              <!-- <li><a class="dropdown-item" href="/e_adminstations">E-Administration</a></li> -->
+                              <li><a class="dropdown-item"
+                                 href="/e_student_certificate_verification">E-Students Certificate
+                                 Verification</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/staff_work_alloted">Staff Work Allotment</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     {% endif %}
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/news" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #3446CD;">News</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/gallery" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #3446CD;">Gallery</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/sector" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #3446CD;">Sectors</a>
+                     </li>
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/contact_us" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #3446CD;">Contact</a>
+                     </li>
+                     {% if user.is_authenticated %}
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/user_logout" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #3446CD;">Logout</a>
+                     </li>
+                     {% else %}
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link" href="/dologin" role="button" aria-haspopup="true"
+                           aria-expanded="false" style="color: #3446CD;">Login</a>
+                     </li>
+                     {% endif %}
+                  </ul>
+               </div>
+            </div>
+            <div class="d-flex justify-content-end">
+               <div class="logo flex-shrink-0 ml-15 mr-14">
+                  <!--<div class="logo flex-shrink-0 ml-3 mr-1 mr-xl-8 mr-xlwd-16">c-->
+                  <a href="/">
+                  <img width="80px" src="{% static 'main/images/homepage/rightlogo.png' %}" class="img-fluid"
+                     alt="egovt">
+                  </a>
+               </div>
+            </div>
+            <div class="hdRighterWrap d-flex align-items-center justify-content-end">
+               <button class="navbar-toggler pgNavOpener ml-1 bdrWidthAlter position-relative" type="button"
+                  data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse"
+                  aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+            </div>
+         </nav>
+      </div>
+   </div>                    
 </header>
 <!-- Modal -->
 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
