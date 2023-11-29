@@ -192,6 +192,9 @@
                               value="{{admissionsFormdata.subject_11}}" class="form-control mt-2" />
                            <input id="subject_12" type="text" placeholder="Subject 12" dir="reader"
                               value="{{admissionsFormdata.subject_12}}" class="form-control mt-2" />
+                           
+                           <label class="form-control mt-2">Viva Mark</label>
+                           <label class="form-control mt-2">Practical Marks</label>
                         </div>
                      </div>
                      <div class="col-md-2">
@@ -232,6 +235,13 @@
                               class="form-control mt-2" />
                            <input id="internal_marks_12" internal="count" placeholder="Internal marks 12"
                               dir="reader" value="{{admissionsFormdata.internal_marks_12}}" type="number"
+                              class="form-control mt-2" />
+
+                           <input readonly id="internal_marks_13" internal="count" placeholder="Internal marks 13"
+                              dir="reader" value="0" type="number"
+                              class="form-control mt-2" />
+                           <input readonly id="internal_marks_14" internal="count" placeholder="Internal marks 14"
+                              dir="reader" value="0" type="number"
                               class="form-control mt-2" />
                         </div>
                      </div>
@@ -274,6 +284,13 @@
                            <input id="external_marks_12" extra="count" placeholder="External marks  12"
                               dir="reader" value="{{admissionsFormdata.external_marks_12}}" type="number"
                               class="form-control mt-2" />
+
+                           <input id="external_marks_13" extra="count" placeholder="External marks  13"
+                              dir="reader" value="{{admissionsFormdata.external_marks_13}}" type="number"
+                              class="form-control mt-2" />
+                           <input id="external_marks_14" extra="count" placeholder="External marks  14"
+                              dir="reader" value="{{admissionsFormdata.external_marks_14}}" type="number"
+                              class="form-control mt-2" />
                         </div>
                      </div>
                      <div class="col-md-2">
@@ -315,6 +332,13 @@
                            <input id="mark_obtained_12" placeholder="Mark obtained 12" total="obi" dir="reader"
                               value="{{admissionsFormdata.mark_obtained_12}}" type="number"
                               class="form-control mt-2" />
+
+                           <input id="mark_obtained_13" placeholder="Mark obtained 13" total="obi" dir="reader"
+                              value="{{admissionsFormdata.mark_obtained_13}}" type="number"
+                              class="form-control mt-2" />
+                           <input id="mark_obtained_14" placeholder="Mark obtained 14" total="obi" dir="reader"
+                              value="{{admissionsFormdata.mark_obtained_14}}" type="number"
+                              class="form-control mt-2" />
                         </div>
                      </div>
                      <div class="col-md-2">
@@ -344,6 +368,11 @@
                               value="{{admissionsFormdata.total_11}}" class="form-control mt-2" />
                            <input id="total_12" placeholder="Total 12" total="nm" type="number" dir="reader"
                               value="{{admissionsFormdata.total_12}}" class="form-control mt-2" />
+
+                           <input id="total_13" placeholder="Total 13" total="nm" type="number" dir="reader"
+                              value="{{admissionsFormdata.total_13}}" class="form-control mt-2" />
+                           <input id="total_14" placeholder="Total 14" total="nm" type="number" dir="reader"
+                              value="{{admissionsFormdata.total_14}}" class="form-control mt-2" />
                         </div>
                      </div>
                      <div class="col-md-2">
@@ -373,6 +402,11 @@
                               value="{{admissionsFormdata.grade_11}}" class="form-control mt-2" />
                            <input id="grade_12" placeholder="Grade 12" type="text" dir="reader"
                               value="{{admissionsFormdata.grade_12}}" class="form-control mt-2" />
+
+                           <input id="grade_13" placeholder="Grade 14" type="text" dir="reader"
+                              value="{{admissionsFormdata.grade_13}}" class="form-control mt-2" />
+                           <input id="grade_14" placeholder="Grade 14" type="text" dir="reader"
+                              value="{{admissionsFormdata.grade_14}}" class="form-control mt-2" />
                         </div>
                      </div>
                   </div>
@@ -482,6 +516,8 @@
                          let get_mark_obtained_10 = document.getElementById("mark_obtained_10").value;
                          let get_mark_obtained_11 = document.getElementById("mark_obtained_11").value;
                          let get_mark_obtained_12 = document.getElementById("mark_obtained_12").value;
+                         let get_mark_obtained_13 = document.getElementById("mark_obtained_13").value;
+                         let get_mark_obtained_14 = document.getElementById("mark_obtained_14").value;
                      
                          let get_total_1 = document.getElementById("total_1").value;
                          let get_total_2 = document.getElementById("total_2").value;
@@ -495,6 +531,8 @@
                          let get_total_10 = document.getElementById("total_10").value;
                          let get_total_11 = document.getElementById("total_11").value;
                          let get_total_12 = document.getElementById("total_12").value;
+                         let get_total_13 = document.getElementById("total_13").value;
+                         let get_total_14 = document.getElementById("total_14").value;
                      
                          let get_grade_1 = document.getElementById("grade_1")
                          let get_grade_2 = document.getElementById("grade_2")
@@ -508,6 +546,8 @@
                          let get_grade_10 = document.getElementById("grade_10")
                          let get_grade_11 = document.getElementById("grade_11")
                          let get_grade_12 = document.getElementById("grade_12")
+                         let get_grade_13 = document.getElementById("grade_13")
+                         let get_grade_14 = document.getElementById("grade_14")
                      
                          let total = document.getElementById("total_12").value
                          let got_max = document.getElementById("mark_obtained_12").value
@@ -525,8 +565,10 @@
                          sub12(parseInt(get_total_10), parseInt(get_mark_obtained_10), get_grade_10)
                          sub12(parseInt(get_total_11), parseInt(get_mark_obtained_11), get_grade_11)
                          sub12(parseInt(get_total_12), parseInt(get_mark_obtained_12), get_grade_12)
+                         sub12(parseInt(get_total_13), parseInt(get_mark_obtained_13), get_grade_13)
+                         sub12(parseInt(get_total_14), parseInt(get_mark_obtained_14), get_grade_14)
                          sub12(total, got_max, gred)
-                         let list_tt = [get_total_1, get_total_2, get_total_3, get_total_4, get_total_5, get_total_6, get_total_7, get_total_8, get_total_9, get_total_10, get_total_11, get_total_12]
+                         let list_tt = [get_total_1, get_total_2, get_total_3, get_total_4, get_total_5, get_total_6, get_total_7, get_total_8, get_total_9, get_total_10, get_total_11, get_total_12, get_total_13, get_total_14]
                          let el = 0
                          list_tt.forEach((element) => {
                              el += parseInt(element)
@@ -536,13 +578,13 @@
                      
                   </script>
                   <div class="row">
-                     <div class="col-md-3">
+                     <!-- <div class="col-md-3">
                         <div class="form-group first">
                            <label>Viva Marks <span class="text-danger">*</span></label>
                            <input id="viva_mark" dir="reader" value="{{admissionsFormdata.viva_mark}}"
                               type="text" class="form-control" />
                         </div>
-                     </div>
+                     </div> -->
                      <div class="col-md-3">
                         <div class="form-group first">
                            <label>Total Marks <span class="text-danger">*</span></label>
@@ -558,14 +600,14 @@
                               class="form-control" />
                         </div>
                      </div>
-                     <div class="col-md-3">
+                     <!-- <div class="col-md-3">
                         <div class="form-group first">
                            <label>Practical Marks <span class="text-danger">*</span></label>
                            <input id="practical_mark" dir="reader"
                               value="{{admissionsFormdata.practical_mark}}" type="text"
                               class="form-control" />
                         </div>
-                     </div>
+                     </div> -->
                   </div>
                   <input type="button" onclick="mark_regiterform()" value="Submit Application" id="prc_btn"
                      class="btn px-5 btn-primary" style="background-color: #3446CD;" />
@@ -583,6 +625,8 @@
                          let obt10 = $("#mark_obtained_10")
                          let obt11 = $("#mark_obtained_11")
                          let obt12 = $("#mark_obtained_12")
+                         let obt13 = $("#mark_obtained_13")
+                         let obt14 = $("#mark_obtained_14")
                      
                          let get_internal_marks_1 = document.getElementById("internal_marks_1").value;
                          let get_internal_marks_2 = document.getElementById("internal_marks_2").value;
@@ -596,6 +640,8 @@
                          let get_internal_marks_10 = document.getElementById("internal_marks_10").value;
                          let get_internal_marks_11 = document.getElementById("internal_marks_11").value;
                          let get_internal_marks_12 = document.getElementById("internal_marks_12").value;
+                         let get_internal_marks_13 = document.getElementById("internal_marks_13").value;
+                         let get_internal_marks_14 = document.getElementById("internal_marks_14").value;
                      
                          let get_external_marks_1 = document.getElementById("external_marks_1").value;
                          let get_external_marks_2 = document.getElementById("external_marks_2").value;
@@ -609,6 +655,8 @@
                          let get_external_marks_10 = document.getElementById("external_marks_10").value;
                          let get_external_marks_11 = document.getElementById("external_marks_11").value;
                          let get_external_marks_12 = document.getElementById("external_marks_12").value;
+                         let get_external_marks_13 = document.getElementById("external_marks_13").value;
+                         let get_external_marks_14 = document.getElementById("external_marks_14").value;
                      
                          obt1.val(parseInt(get_internal_marks_1) + parseInt(get_external_marks_1))
                          obt2.val(parseInt(get_internal_marks_2) + parseInt(get_external_marks_2))
@@ -622,6 +670,8 @@
                          obt10.val(parseInt(get_internal_marks_10) + parseInt(get_external_marks_10))
                          obt11.val(parseInt(get_internal_marks_11) + parseInt(get_external_marks_11))
                          obt12.val(parseInt(get_internal_marks_12) + parseInt(get_external_marks_12))
+                         obt13.val(parseInt(get_internal_marks_13) + parseInt(get_external_marks_13))
+                         obt14.val(parseInt(get_internal_marks_14) + parseInt(get_external_marks_14))
                      }, 1000)
                      
                      
@@ -968,6 +1018,8 @@
              let get_internal_marks_10 = document.getElementById("internal_marks_10").value;
              let get_internal_marks_11 = document.getElementById("internal_marks_11").value;
              let get_internal_marks_12 = document.getElementById("internal_marks_12").value;
+             let get_internal_marks_13 = document.getElementById("internal_marks_13").value;
+             let get_internal_marks_14 = document.getElementById("internal_marks_14").value;
          
              let get_external_marks_1 = document.getElementById("external_marks_1").value;
              let get_external_marks_2 = document.getElementById("external_marks_2").value;
@@ -981,6 +1033,8 @@
              let get_external_marks_10 = document.getElementById("external_marks_10").value;
              let get_external_marks_11 = document.getElementById("external_marks_11").value;
              let get_external_marks_12 = document.getElementById("external_marks_12").value;
+             let get_external_marks_13 = document.getElementById("external_marks_13").value;
+             let get_external_marks_14 = document.getElementById("external_marks_14").value;
          
              let get_mark_obtained_1 = document.getElementById("mark_obtained_1").value;
              let get_mark_obtained_2 = document.getElementById("mark_obtained_2").value;
@@ -995,6 +1049,8 @@
              let get_mark_obtained_10 = document.getElementById("mark_obtained_10").value;
              let get_mark_obtained_11 = document.getElementById("mark_obtained_11").value;
              let get_mark_obtained_12 = document.getElementById("mark_obtained_12").value;
+             let get_mark_obtained_13 = document.getElementById("mark_obtained_13").value;
+             let get_mark_obtained_14 = document.getElementById("mark_obtained_14").value;
          
              let get_total_1 = document.getElementById("total_1").value;
              let get_total_2 = document.getElementById("total_2").value;
@@ -1009,11 +1065,11 @@
              let get_total_10 = document.getElementById("total_10").value;
              let get_total_11 = document.getElementById("total_11").value;
              let get_total_12 = document.getElementById("total_12").value;
+             let get_total_13 = document.getElementById("total_13").value;
+             let get_total_14 = document.getElementById("total_14").value;
          
-             let get_viva_mark = document.getElementById("viva_mark").value;
              let get_total_mark_1 = document.getElementById("total_mark_1").value;
              let get_total_mark_obtained = document.getElementById("total_mark_obtained").value;
-             let get_practical_mark = document.getElementById("practical_mark").value;
          
          
              let get_grade_1 = document.getElementById("grade_1").value;
@@ -1028,6 +1084,8 @@
              let get_grade_10 = document.getElementById("grade_10").value;
              let get_grade_11 = document.getElementById("grade_11").value;
              let get_grade_12 = document.getElementById("grade_12").value;
+             let get_grade_13 = document.getElementById("grade_13").value;
+             let get_grade_14 = document.getElementById("grade_14").value;
              let er = document.querySelector("#error00");
          
          
@@ -1150,10 +1208,6 @@
                  window.location.href = "#mark_registration";
          
          
-             } else if (get_viva_mark === "") {
-                 er.innerHTML = "Enter Viva Mark";
-                 er.style.display = "block";
-                 window.location.href = "#mark_registration";
              } else if (get_total_mark_1 === "") {
                  er.innerHTML = "Enter Total mark";
                  er.style.display = "block";
@@ -1163,11 +1217,6 @@
                  er.innerHTML = "Enter Total Mark Obtained";
                  er.style.display = "block";
                  window.location.href = "#mark_registration";
-             } else if (get_practical_mark === "") {
-                 er.innerHTML = "Enter Practical mark";
-                 er.style.display = "block";
-                 window.location.href = "#mark_registration";
-         
              } else {
                  $.ajax({
                      type: "POST",
@@ -1199,6 +1248,8 @@
                          send_internal_marks_10: get_internal_marks_10,
                          send_internal_marks_11: get_internal_marks_11,
                          send_internal_marks_12: get_internal_marks_12,
+                         send_internal_marks_13: get_internal_marks_13,
+                         send_internal_marks_14: get_internal_marks_14,
          
                          send_external_marks_1: get_external_marks_1,
                          send_external_marks_2: get_external_marks_2,
@@ -1212,6 +1263,8 @@
                          send_external_marks_10: get_external_marks_10,
                          send_external_marks_11: get_external_marks_11,
                          send_external_marks_12: get_external_marks_12,
+                         send_external_marks_13: get_external_marks_13,
+                         send_external_marks_14: get_external_marks_14,
                          send_mark_obtained_1: get_mark_obtained_1,
                          send_mark_obtained_2: get_mark_obtained_2,
                          send_mark_obtained_3: get_mark_obtained_3,
@@ -1224,6 +1277,8 @@
                          send_mark_obtained_10: get_mark_obtained_10,
                          send_mark_obtained_11: get_mark_obtained_11,
                          send_mark_obtained_12: get_mark_obtained_12,
+                         send_mark_obtained_13: get_mark_obtained_13,
+                         send_mark_obtained_14: get_mark_obtained_14,
                          send_total_1: get_total_1,
                          send_total_2: get_total_2,
                          send_total_3: get_total_3,
@@ -1236,10 +1291,10 @@
                          send_total_10: get_total_10,
                          send_total_11: get_total_11,
                          send_total_12: get_total_12,
-                         send_viva_mark: get_viva_mark,
+                         send_total_13: get_total_13,
+                         send_total_14: get_total_14,
                          send_total_mark_1: get_total_mark_1,
                          send_total_mark_obtained: get_total_mark_obtained,
-                         send_practical_mark: get_practical_mark,
                          send_grade_1: get_grade_1,
                          send_grade_2: get_grade_2,
                          send_grade_3: get_grade_3,
@@ -1252,6 +1307,8 @@
                          send_grade_10: get_grade_10,
                          send_grade_11: get_grade_11,
                          send_grade_12: get_grade_12,
+                         send_grade_13: get_grade_13,
+                         send_grade_14: get_grade_14,
          
                          csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(), // Replace with the actual CSRF token
                      },
