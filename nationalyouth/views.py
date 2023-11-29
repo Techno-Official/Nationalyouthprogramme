@@ -481,13 +481,23 @@ def course_and_college(request):
 #===================================================================================================
 
 
-def generate_roll_number():
+def generate_admission_roll_number():
     last_roll_number = Admission_Registration.objects.order_by('-id').first()
     if last_roll_number:
         last_roll_number = int(last_roll_number.registration_number)
         new_roll_number = str(last_roll_number + 1)
     else:
-        new_roll_number = '1000'
+        new_roll_number = '555501038'
+    return new_roll_number
+
+
+def generate_vtc_roll_number():
+    last_roll_number = Admission_Registration.objects.order_by('-id').first()
+    if last_roll_number:
+        last_roll_number = int(last_roll_number.registration_number)
+        new_roll_number = str(last_roll_number + 1)
+    else:
+        new_roll_number = '900363385'
     return new_roll_number
 
 #===================================================================================================
@@ -521,7 +531,7 @@ def vtc_course_admission(request):
         principal_approval_id=Status.objects.get(id=principalApproval)
         
         add_vtc_course_admission_registration = VTC_Course_Admission_Registration(
-            registration_number = generate_roll_number(),
+            registration_number = generate_vtc_roll_number(),
             name_of_student = nameOfStudent,
             address = address,
             id_number = idNumber,
@@ -541,7 +551,7 @@ def vtc_course_admission(request):
         'all_college_name':all_college_name,
         'all_course_name':all_course_name,
         'all_status':all_status,
-        'reg_id':generate_roll_number(),
+        'reg_id':generate_vtc_roll_number(),
     }
     return render(request,'internal/vtc_course_admission.html',data)
 #===================================================================================================
@@ -582,7 +592,7 @@ def admission_registration(request):
         principal_approval_id=Status.objects.get(id=principalApproval)
         
         add_admission_registration = Admission_Registration(
-            registration_number = generate_roll_number(),
+            registration_number = generate_admission_roll_number(),
             name_of_student = nameOfStudent,
             address = address,
             id_number = idNumber,
@@ -602,7 +612,7 @@ def admission_registration(request):
         'all_college_name':all_college_name,
         'all_course_name':all_course_name,
         'all_status':all_status,
-        'reg_id':generate_roll_number(),
+        'reg_id':generate_admission_roll_number(),
     }
     return render(request,'internal/admission_registration.html',data)
 #===================================================================================================
@@ -821,6 +831,8 @@ def mark_registration(request):
     internal_marks_10=request.POST.get("send_internal_marks_10")
     internal_marks_11=request.POST.get("send_internal_marks_11")
     internal_marks_12=request.POST.get("send_internal_marks_12")
+    internal_marks_13=request.POST.get("send_internal_marks_13")
+    internal_marks_14=request.POST.get("send_internal_marks_14")
     external_marks_1=request.POST.get("send_external_marks_1")
     external_marks_2=request.POST.get("send_external_marks_2")
     external_marks_3=request.POST.get("send_external_marks_3")
@@ -833,6 +845,8 @@ def mark_registration(request):
     external_marks_10=request.POST.get("send_external_marks_10")
     external_marks_11=request.POST.get("send_external_marks_11")
     external_marks_12=request.POST.get("send_external_marks_12")
+    external_marks_13=request.POST.get("send_external_marks_13")
+    external_marks_14=request.POST.get("send_external_marks_14")
     mark_obtained_1=request.POST.get("send_mark_obtained_1")
     mark_obtained_2=request.POST.get("send_mark_obtained_2")
     mark_obtained_3=request.POST.get("send_mark_obtained_3")
@@ -845,6 +859,8 @@ def mark_registration(request):
     mark_obtained_10=request.POST.get("send_mark_obtained_10")
     mark_obtained_11=request.POST.get("send_mark_obtained_11")
     mark_obtained_12=request.POST.get("send_mark_obtained_12")
+    mark_obtained_13=request.POST.get("send_mark_obtained_13")
+    mark_obtained_14=request.POST.get("send_mark_obtained_14")
     total_1=request.POST.get("send_total_1")
     total_2=request.POST.get("send_total_2")
     total_3=request.POST.get("send_total_3")
@@ -857,10 +873,10 @@ def mark_registration(request):
     total_10=request.POST.get("send_total_10")
     total_11=request.POST.get("send_total_11")
     total_12=request.POST.get("send_total_12")
-    viva_mark=request.POST.get("send_viva_mark")
+    total_13=request.POST.get("send_total_13")
+    total_14=request.POST.get("send_total_14")
     total_mark_1=request.POST.get("send_total_mark_1")
     total_mark_obtained=request.POST.get("send_total_mark_obtained")
-    practical_mark=request.POST.get("send_practical_mark")
     
     grade_1=request.POST.get("send_grade_1")
     grade_2=request.POST.get("send_grade_2")
@@ -874,6 +890,8 @@ def mark_registration(request):
     grade_10=request.POST.get("send_grade_10")
     grade_11=request.POST.get("send_grade_11")
     grade_12=request.POST.get("send_grade_12")
+    grade_13=request.POST.get("send_grade_13")
+    grade_14=request.POST.get("send_grade_14")
 
 
     if registration_number and date and subject_1 and internal_marks_1 and external_marks_1 and mark_obtained_1 and \
@@ -906,6 +924,8 @@ def mark_registration(request):
             pc_geting_number_rnd.internal_marks_10=internal_marks_10
             pc_geting_number_rnd.internal_marks_11=internal_marks_11
             pc_geting_number_rnd.internal_marks_12=internal_marks_12
+            pc_geting_number_rnd.internal_marks_13=internal_marks_13
+            pc_geting_number_rnd.internal_marks_14=internal_marks_14
             pc_geting_number_rnd.external_marks_1=external_marks_1
             pc_geting_number_rnd.external_marks_2=external_marks_2
             pc_geting_number_rnd.external_marks_3=external_marks_3
@@ -918,6 +938,8 @@ def mark_registration(request):
             pc_geting_number_rnd.external_marks_10=external_marks_10
             pc_geting_number_rnd.external_marks_11=external_marks_11
             pc_geting_number_rnd.external_marks_12=external_marks_12
+            pc_geting_number_rnd.external_marks_13=external_marks_13
+            pc_geting_number_rnd.external_marks_14=external_marks_14
             pc_geting_number_rnd.mark_obtained_1=mark_obtained_1
             pc_geting_number_rnd.mark_obtained_2=mark_obtained_2
             pc_geting_number_rnd.mark_obtained_3=mark_obtained_3
@@ -930,6 +952,8 @@ def mark_registration(request):
             pc_geting_number_rnd.mark_obtained_10=mark_obtained_10
             pc_geting_number_rnd.mark_obtained_11=mark_obtained_11
             pc_geting_number_rnd.mark_obtained_12=mark_obtained_12
+            pc_geting_number_rnd.mark_obtained_13=mark_obtained_13
+            pc_geting_number_rnd.mark_obtained_14=mark_obtained_14
             pc_geting_number_rnd.total_1=total_1
             pc_geting_number_rnd.total_2=total_2
             pc_geting_number_rnd.total_3=total_3
@@ -942,11 +966,11 @@ def mark_registration(request):
             pc_geting_number_rnd.total_10=total_10
             pc_geting_number_rnd.total_11=total_11
             pc_geting_number_rnd.total_12=total_12
-            pc_geting_number_rnd.viva_mark=viva_mark
+            pc_geting_number_rnd.total_13=total_13
+            pc_geting_number_rnd.total_14=total_14
 
             pc_geting_number_rnd.total_mark_1=total_mark_1
             pc_geting_number_rnd.total_mark_obtained=total_mark_obtained
-            pc_geting_number_rnd.practical_mark=practical_mark
            
             pc_geting_number_rnd.grade_1=grade_1
             pc_geting_number_rnd.grade_2=grade_2
@@ -960,6 +984,8 @@ def mark_registration(request):
             pc_geting_number_rnd.grade_10=grade_10
             pc_geting_number_rnd.grade_11=grade_11
             pc_geting_number_rnd.grade_12=grade_12
+            pc_geting_number_rnd.grade_13=grade_13
+            pc_geting_number_rnd.grade_14=grade_14
             pc_geting_number_rnd.save()
             return HttpResponse("Save")
         
@@ -991,6 +1017,8 @@ def mark_registration(request):
                 internal_marks_10=internal_marks_10,
                 internal_marks_11=internal_marks_11,
                 internal_marks_12=internal_marks_12,
+                internal_marks_13=internal_marks_13,
+                internal_marks_14=internal_marks_14,
                 external_marks_1=external_marks_1,
                 external_marks_2=external_marks_2,
                 external_marks_3=external_marks_3,
@@ -1003,6 +1031,8 @@ def mark_registration(request):
                 external_marks_10=external_marks_10,
                 external_marks_11=external_marks_11,
                 external_marks_12=external_marks_12,
+                external_marks_13=external_marks_13,
+                external_marks_14=external_marks_14,
                 mark_obtained_1=mark_obtained_1,
                 mark_obtained_2=mark_obtained_2,
                 mark_obtained_3=mark_obtained_3,
@@ -1015,6 +1045,8 @@ def mark_registration(request):
                 mark_obtained_10=mark_obtained_10,
                 mark_obtained_11=mark_obtained_11,
                 mark_obtained_12=mark_obtained_12,
+                mark_obtained_13=mark_obtained_13,
+                mark_obtained_14=mark_obtained_14,
                 total_1=total_1,
                 total_2=total_2,
                 total_3=total_3,
@@ -1027,10 +1059,10 @@ def mark_registration(request):
                 total_10=total_10,
                 total_11=total_11,
                 total_12=total_12,
-                viva_mark=viva_mark,
+                total_13=total_13,
+                total_14=total_14,
                 total_mark_1=total_mark_1,
                 total_mark_obtained=total_mark_obtained,
-                practical_mark=practical_mark,
             
                 grade_1=grade_1,
                 grade_2=grade_2,
@@ -1044,6 +1076,8 @@ def mark_registration(request):
                 grade_10=grade_10,
                 grade_11=grade_11,
                 grade_12=grade_12,
+                grade_13=grade_13,
+                grade_14=grade_14,
             )
             add_mark_registration.save()
             return HttpResponse("Save")

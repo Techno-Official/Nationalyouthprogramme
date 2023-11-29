@@ -138,20 +138,19 @@
                                  <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
                                  
                                  {% endif %} -->
-
-                                        {% endif %}
-                                    </ul>
-                                </div>
-                            </li>
-                            {% if user.is_authenticated and user.user_role.user_role == "Officer" %}
-                            <li class="nav-item dropdown ddohOpener">
-                                <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    style="color: #3446CD;">Official and
-                                    Administration</a>
-                                <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
-                                    <ul class="list-unstyled mb-0 hdDropdownList">
-                                        <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
+                              {% endif %}
+                           </ul>
+                        </div>
+                     </li>
+                     {% if user.is_authenticated and user.user_role.user_role == "Officer" %}
+                     <li class="nav-item dropdown ddohOpener">
+                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           style="color: #3446CD;">Official and
+                        Administration</a>
+                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                           <ul class="list-unstyled mb-0 hdDropdownList">
+                              <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
                                  Accounts</a>
                                  </li> -->
                                         <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
