@@ -101,7 +101,7 @@ class AdminMark_List_Registration(admin.ModelAdmin):
                     'mark_obtained_9','mark_obtained_10','mark_obtained_11','mark_obtained_12','total_1','total_2',\
                     'total_3','total_4','total_5','total_6','total_7','total_8','total_9','total_10','total_11','total_12','grade_1','grade_2',\
                     'grade_3','grade_4','grade_5','grade_6','grade_7','grade_8','grade_9','grade_10','grade_11','grade_12',\
-                    'viva_mark','total_mark_1','total_mark_obtained','practical_mark','mark_enter_clerk_name','mark_enter_clerk',\
+                    'total_mark_1','total_mark_obtained','mark_enter_clerk_name','mark_enter_clerk',\
                     'mark_check_clerk_name','mark_check_clerk','second_verified_officer_name','second_verified_officer',\
                     'final_mark_verified_officer_name','result_status','result_enter_register_book_number','mark_obtained','total_mark_2','date_and_time']
 
