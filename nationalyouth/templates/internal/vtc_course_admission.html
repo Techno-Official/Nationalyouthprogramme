@@ -18,7 +18,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 col-md-12 col-sm-6 py-5 pt-15">
                     <center>
-                        <h3 id="admission_registration">VTC Course Admission</h3>
+                        <h3 id="vtc_registration">VTC Course Admission</h3>
 
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <div style="width: 100px; height: 3px; background-color: #3446CD; margin-bottom: 10px;">
@@ -167,55 +167,55 @@
                 if (registrationNum === "") {
                     er.innerHTML = "Enter Registration Number";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (nameOfStudent === "") {
                     er.innerHTML = "Enter Name of Student";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (address === "") {
                     er.innerHTML = "Enter Address";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (idNumber === "") {
                     er.innerHTML = "Enter ID Number";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (date === "") {
                     er.innerHTML = "Select the Date of Birth";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (mobileNumber === "") {
                     er.innerHTML = "Enter Mobile Number";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (collegeName === "") {
                     er.innerHTML = "Select College Name";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (district === "") {
                     er.innerHTML = "Enter District";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (courseName === "") {
                     er.innerHTML = "Select Course Name";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (admissionFees === "") {
                     er.innerHTML = "Enter Admission Fees";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (admission_date === "") {
                     er.innerHTML = "Select Admission date";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else if (principalApproval === "") {
                     er.innerHTML = "Select Principal Approval";
                     er.style.display = "block";
-                    window.location.href = "#admission_registration";
+                    window.location.href = "#vtc_registration";
                 } else {
                     $.ajax({
                         type: "POST",
-                        url: "/admission_registration",
+                        url: "/vtc_course_admission",
                         data: {
                             registrationNum: registrationNum,
                             nameOfStudent: nameOfStudent,
@@ -236,10 +236,10 @@
                                 er.setAttribute("class", "text-center alert alert-success");
                                 er.innerHTML = "Form submission successful";
                                 er.style.display = "block";
-                                window.location.href = "#admission_registration";
+                                window.location.href = "#vtc_registration";
             
                                 setTimeout(() => {
-                                    window.location.href = "/admission_registration";
+                                    window.location.href = "/vtc_course_admission";
                                 }, 4000);
                             } else {
                                 alert("Oops, something went wrong");
