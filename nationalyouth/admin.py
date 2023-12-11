@@ -83,6 +83,11 @@ class AdminContact_us(admin.ModelAdmin):
 class AdminAdmission_Registration(admin.ModelAdmin):
     list_display = ['id','registration_number','name_of_student','address', 'id_number','date_of_birth','mobile_number',\
                     'college_name','district','course_name','admission_fees','admission_date','principal_approval','date_and_time']
+    
+
+class AdminVTC_Course_Admission_Registration(admin.ModelAdmin):
+    list_display = ['id','registration_number','name_of_student','address', 'id_number','date_of_birth','mobile_number',\
+                    'college_name','district','course_name','admission_fees','admission_date','principal_approval','date_and_time']
 
 
 class AdminExam_Registration(admin.ModelAdmin):
@@ -313,6 +318,7 @@ admin.site.register(Contact_us,AdminContact_us)
 
 
 admin.site.register(Admission_Registration,AdminAdmission_Registration)
+admin.site.register(VTC_Course_Admission_Registration,AdminVTC_Course_Admission_Registration)
 admin.site.register(Exam_Registration,AdminExam_Registration)
 admin.site.register(Mark_List_Registration,AdminMark_List_Registration)
 admin.site.register(Add_on_Programme,AdminAdd_on_Programme)

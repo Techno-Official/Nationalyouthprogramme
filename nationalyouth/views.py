@@ -492,7 +492,7 @@ def generate_admission_roll_number():
 
 
 def generate_vtc_roll_number():
-    last_roll_number = Admission_Registration.objects.order_by('-id').first()
+    last_roll_number = VTC_Course_Admission_Registration.objects.order_by('-id').first()
     if last_roll_number:
         last_roll_number = int(last_roll_number.registration_number)
         new_roll_number = str(last_roll_number + 1)
