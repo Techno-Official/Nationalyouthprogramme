@@ -637,18 +637,20 @@ def exam_registration(request):
         get_search_registration_number=request.GET.get("search_registration_number")
         if get_search_registration_number:
             admissions = Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
+            vtc_admissions = VTC_Course_Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
             exmd = Exam_Registration.objects.filter(registration_number=get_search_registration_number).first()
             if exmd:
                 register_number_allready="Registration Number already exist in Mark Registration !!"
             if admissions:
                 search_student_data = admissions
+            elif vtc_admissions:
+                search_student_data = vtc_admissions
             else:
                 search_student_data_error = "Invalid Registration Number!"
 
 
 
     registration_number=request.POST.get("send_registration_number")
-    #registered_student = Admission_Registration.objects.get(registration_number=registration_number)
     exam_fees=request.POST.get("send_exam_fees")
     exam_attendance=request.POST.get("send_exam_attendance")
     any_fees_concession=request.POST.get("send_any_fees_concession")
