@@ -731,12 +731,15 @@ def mark_registration(request):
         admissions = Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
         get_exam = Exam_Registration.objects.filter(registration_number=get_search_registration_number).first()
         admissionsFormdata = Mark_List_Registration.objects.filter(registration_number=get_search_registration_number).first()
+        vtc_admissions = VTC_Course_Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
 
         if admissionsFormdata:
             register_number_allready="Registration Number already exist in Mark Registration !!"
         if admissions:
-                search_student_data = admissions
-                search_get_exam = get_exam
+            search_student_data = admissions
+            search_get_exam = get_exam
+        elif vtc_admissions:
+            search_student_data = vtc_admissions
         else:
             search_student_data_error = "Invalid Registration Number!"
 
