@@ -27,7 +27,7 @@
                 <div class="col-md-4 pt-4"> <a>
                         <i class="fas fa-phone align-middle icn" style="color: yellow;"><span
                                 class="sr-only">icon</span></i>
-                        <span style="color: white;font-size: 15px;">E-mail: officer@nationalyouthprogramme.in</span>
+                        <span style="color: white;font-size: 15px;">E-mail: secretary@nypyest.in</span>
                     </a>
                 </div>
                 <div class="col-md-3 pb-2">
@@ -138,19 +138,19 @@
                                  <li><a class="dropdown-item" href="/mark_registration">Mark Registration</a>
                                  
                                  {% endif %} -->
-                              {% endif %}
-                           </ul>
-                        </div>
-                     </li>
-                     {% if user.is_authenticated and user.user_role.user_role == "Officer" %}
-                     <li class="nav-item dropdown ddohOpener">
-                        <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                           style="color: #3446CD;">Official and
-                        Administration</a>
-                        <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
-                           <ul class="list-unstyled mb-0 hdDropdownList">
-                              <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </li>
+                            {% if user.is_authenticated and user.user_role.user_role == "Officer" %}
+                            <li class="nav-item dropdown ddohOpener">
+                                <a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: #3446CD;">Official and
+                                    Administration</a>
+                                <div class="dropdown-menu hdMainDropdown desktopDropOnHover">
+                                    <ul class="list-unstyled mb-0 hdDropdownList">
+                                        <!-- <li><a class="dropdown-item" href="/e_finance_and_accounts">E-Finance and
                                  Accounts</a>
                                  </li> -->
                                         <li><a class="dropdown-item" href="/e_office_accounts">E-Office Accounts</a>
