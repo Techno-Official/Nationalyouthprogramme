@@ -829,6 +829,7 @@ def mark_registration(request):
     internal_marks_3=request.POST.get("send_internal_marks_3")
     internal_marks_4=request.POST.get("send_internal_marks_4")
     internal_marks_5=request.POST.get("send_internal_marks_5")
+    print(internal_marks_5,'******************')
     internal_marks_6=request.POST.get("send_internal_marks_6")
     internal_marks_7=request.POST.get("send_internal_marks_7")
     internal_marks_8=request.POST.get("send_internal_marks_8")
