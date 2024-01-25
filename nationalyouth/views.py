@@ -23,20 +23,125 @@ from  django.http import JsonResponse
 
 
 
+
+def common_data():
+    #======= 1 Command =======================================
+    all_admission_data = Admission_Registration.objects.all()
+    for ad in all_admission_data:
+        filter_exam_data = Exam_Registration.objects.filter(registration_number=ad.registration_number).first()
+        if filter_exam_data:
+            filter_exam_data.name_of_student = ad.name_of_student
+            filter_exam_data.address = ad.address
+            filter_exam_data.id_number = ad.id_number
+            filter_exam_data.date_of_birth = ad.date_of_birth
+            filter_exam_data.mobile_number = ad.mobile_number
+            filter_exam_data.college_name = ad.college_name
+            filter_exam_data.district = ad.district     
+            filter_exam_data.course_name = ad.course_name
+            filter_exam_data.admission_fees = ad.admission_fees
+            filter_exam_data.admission_date = ad.admission_date
+            filter_exam_data.principal_approval = ad.principal_approval  # Assuming principal_approval is a ForeignKey field
+            filter_exam_data.save()
+            print("All Admission Data Done in Exam Data")
+
+    #=========================================================================
+
+
+    #=============== 2 Command ================================================
+
+    all_vtc_admission = VTC_Course_Admission_Registration.objects.all()
+    for vt in all_vtc_admission:
+        put_exam = Exam_Registration.objects.filter(registration_number=vt.registration_number).first()
+        if put_exam:
+            put_exam.name_of_student = vt.name_of_student
+            put_exam.address = vt.address
+            put_exam.id_number = vt.id_number
+            put_exam.date_of_birth = vt.date_of_birth
+            put_exam.mobile_number = vt.mobile_number
+            put_exam.college_name = vt.college_name
+            put_exam.district = vt.district     
+            put_exam.course_name = vt.course_name
+            put_exam.admission_fees = vt.admission_fees
+            put_exam.admission_date = vt.admission_date
+            put_exam.principal_approval = vt.principal_approval
+            put_exam.save()
+            print("All VTC Data Done in Exam Data")
+    #=============================================================================
+
+    #================= 3 Command =================================================
+    all_admission_data2 = Admission_Registration.objects.all()
+    for ad2 in all_admission_data2:
+        get_exam_data = Exam_Registration.objects.filter(registration_number=ad2.registration_number).first()
+        get_mark_data=Mark_List_Registration.objects.filter(registration_number=ad2.registration_number).first()
+        if get_mark_data:
+            get_mark_data.name_of_student=ad2.name_of_student
+            get_mark_data.address=ad2.address
+            get_mark_data.id_number=ad2.id_number
+            get_mark_data.date_of_birth=ad2.date_of_birth
+            get_mark_data.mobile_number=ad2.mobile_number
+            get_mark_data.college_name=ad2.college_name
+            get_mark_data.district=ad2.district          
+            get_mark_data.course_name=ad2.course_name
+            get_mark_data.admission_fees=ad2.admission_fees
+            get_mark_data.admission_date=ad2.admission_date
+            get_mark_data.principal_approval=ad2.principal_approval  
+
+            get_mark_data.exam_fees=get_exam_data.exam_fees
+            get_mark_data.exam_attendance=get_exam_data. exam_attendance
+            get_mark_data.any_fees_concession=get_exam_data.any_fees_concession
+            get_mark_data.date=get_exam_data.date
+            get_mark_data.principal_code=get_exam_data.principal_code      
+            get_mark_data.principal_name=get_exam_data.principal_name          
+            get_mark_data.online_fees=get_exam_data.online_fees
+            get_mark_data.remark=get_exam_data.remark 
+            get_mark_data.principal_approval=get_exam_data.principal_approval 
+            get_mark_data.save()
+        if get_exam_data:
+            get_exam_data.name_of_student = ad2.name_of_student
+            get_exam_data.address = ad2.address
+            get_exam_data.id_number = ad2.id_number
+            get_exam_data.date_of_birth = ad2.date_of_birth
+            get_exam_data.mobile_number = ad2.mobile_number
+            get_exam_data.college_name = ad2.college_name
+            get_exam_data.district = ad2.district     
+            get_exam_data.course_name = ad2.course_name
+            get_exam_data.admission_fees = ad2.admission_fees
+            get_exam_data.admission_date = ad2.admission_date
+            get_exam_data.principal_approval = ad2.principal_approval
+            get_exam_data.save()
+            print("All Admission & Exam Data Done in Mark Data")
+
+    #==============================================================================
+
+
+    #=====================4 Command ===============================================
+    get_vtc_admission = VTC_Course_Admission_Registration.objects.all()
+    for a in get_vtc_admission:
+        marks=Mark_List_Registration.objects.filter(registration_number=a.registration_number).first()
+        if marks:
+            marks.name_of_student=a.name_of_student
+            marks.address=a.address
+            marks.id_number=a.id_number
+            marks.date_of_birth=a.date_of_birth
+            marks.mobile_number=a.mobile_number
+            marks.college_name=a.college_name
+            marks.district=a.district          
+            marks.course_name=a.course_name
+            marks.admission_fees=a.admission_fees
+            marks.admission_date=a.admission_date
+            marks.principal_approval=a.principal_approval
+            marks.save()
+            print("Only VTC Data Done in Mark Data")
+
+
+            #Exam data is pending in Mark data
+
+
+
 #===================================================================================================
 #======================================= Homepage Page =============================================
 def homepage(request):
     user_pwd=CustomeUser.objects.all()
-   
-    # for user in user_pwd:
-
-    #     get_pwd=user.password
-    #     if get_pwd[0:9] !="pbkdf2_sh":
-    #         if user.password:
-    #             hashed_password = make_password(user.password)
-    #             print(hashed_password)
-    #             user.password = hashed_password
-    #             user.save()
 
     count = None
     def get_ip(request):
@@ -61,6 +166,7 @@ def homepage(request):
     data={
         'count':count,
     }
+   
     return render(request,'Main/homepage.html',data)
 #===================================================================================================
 #===================================================================================================
@@ -191,6 +297,7 @@ def forgot_password(request):
 #==================================================================================================
 #======================================= About Page ===============================================
 def about_us(request):
+    common_data()
     def get_ip(request):
         address = request.META.get('HTTP_X_FORWAREDED_FOR')
         if address:
@@ -668,7 +775,6 @@ def exam_registration(request):
         principal_approval_id=Status.objects.get(id=principal_approval)
         regiter_number_checking=Exam_Registration.objects.filter(registration_number=registration_number).first()
         if regiter_number_checking:
-            
             regiter_number_checking.registration_number = registration_number
             regiter_number_checking.exam_fees = exam_fee_id
             regiter_number_checking.exam_attendance = exam_attendance
