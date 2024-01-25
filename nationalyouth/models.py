@@ -306,6 +306,20 @@ class Admission_Registration(models.Model):
 class Exam_Registration(models.Model):
     registration_number = models.CharField(max_length=250)
     #registered_student = models.ForeignKey(Admission_Registration, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+
+    name_of_student = models.CharField(max_length=250,null=True,blank=True)
+    address = models.TextField(max_length=250,default='',null=True,blank=True)
+    id_number = models.CharField(max_length=250,null=True,blank=True)
+    date_of_birth = models.CharField(max_length=250,null=True,blank=True)
+    mobile_number = models.CharField(max_length=250,null=True,blank=True)
+    college_name = models.ForeignKey(College_Name, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    district = models.CharField(max_length=250,null=True,blank=True)     
+    course_name = models.ForeignKey(Course_Name, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    admission_fees = models.CharField(max_length=250,null=True,blank=True)
+    admission_date = models.CharField(max_length=250,null=True,blank=True)
+    principal_approval = models.ForeignKey(Status, on_delete = models.CASCADE,null=True,blank=True)
+
+
     exam_fees = models.ForeignKey(Exam_Fees_Type, on_delete = models.CASCADE,null=True,blank=True)     #select option filed
     exam_attendance = models.CharField(max_length=250)
     any_fees_concession = models.CharField(max_length=250)
@@ -326,6 +340,31 @@ class Exam_Registration(models.Model):
 #====================================== Mark List Registration Model ==============================
 class Mark_List_Registration(models.Model):
     registration_number = models.CharField(max_length=250)
+
+    name_of_student = models.CharField(max_length=250,null=True,blank=True)
+    address = models.TextField(max_length=250,default='',null=True,blank=True)
+    id_number = models.CharField(max_length=250,null=True,blank=True)
+    date_of_birth = models.CharField(max_length=250,null=True,blank=True)
+    mobile_number = models.CharField(max_length=250,null=True,blank=True)
+    college_name = models.ForeignKey(College_Name, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    district = models.CharField(max_length=250,null=True,blank=True)     
+    course_name = models.ForeignKey(Course_Name, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+    admission_fees = models.CharField(max_length=250,null=True,blank=True)
+    admission_date = models.CharField(max_length=250,null=True,blank=True)
+    principal_approval = models.ForeignKey(Status, on_delete = models.CASCADE,null=True,blank=True)
+
+    exam_fees = models.ForeignKey(Exam_Fees_Type, on_delete = models.CASCADE,null=True,blank=True)     #select option filed
+    exam_attendance = models.CharField(max_length=250,null=True,blank=True)
+    any_fees_concession = models.CharField(max_length=250,null=True,blank=True)
+    date = models.CharField(max_length=250,null=True,blank=True)
+    principal_code = models.CharField(max_length=250,null=True,blank=True)   
+    principal_name = models.CharField(max_length=250,null=True,blank=True)     
+    online_fees = models.IntegerField(default=0,null=True,blank=True)
+    remark = models.TextField(max_length=250,null=True,blank=True)
+    principal_approval = models.ForeignKey(Status, on_delete = models.CASCADE,null=True,blank=True) #select option filed
+
+
+
     date = models.CharField(max_length=250)
     subject_1 = models.CharField(max_length=250,default='')
     subject_2 = models.CharField(max_length=250,default='')   
