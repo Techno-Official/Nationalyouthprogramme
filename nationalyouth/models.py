@@ -252,6 +252,7 @@ class Nature_of_Leave(models.Model):
 #==================================================================================================
 
 
+
 #===================================== End Dropdown Model==========================================
 #==================================================================================================
 
@@ -339,8 +340,11 @@ class Exam_Registration(models.Model):
 
 #====================================== Mark List Registration Model ==============================
 class Mark_List_Registration(models.Model):
+    RESULT_STATUS = (
+            ('1','Passed'),
+            ('2','Failed'),
+        )
     registration_number = models.CharField(max_length=250)
-
     name_of_student = models.CharField(max_length=250,null=True,blank=True)
     address = models.TextField(max_length=250,default='',null=True,blank=True)
     id_number = models.CharField(max_length=250,null=True,blank=True)
@@ -451,6 +455,8 @@ class Mark_List_Registration(models.Model):
     grade_14 = models.CharField(max_length=250,default='',null=True,blank=True)
     total_mark_1 = models.IntegerField(default=0)
     total_mark_obtained = models.IntegerField(default=0)
+    result = models.CharField(max_length=25,choices=RESULT_STATUS,null=True,blank=True)
+    
 
     #========================Office use=================
     mark_enter_clerk_name = models.CharField(max_length=250,default='',null=True,blank=True)   

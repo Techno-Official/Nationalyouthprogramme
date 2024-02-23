@@ -582,8 +582,12 @@ def news_details(request):
 
 #===================================================================================================
 #======================================= Course and college Page ===================================
-def course_and_college(request):
-    return render(request,'internal/course_and_college.html')
+def course(request):
+    return render(request,'internal/course.html')
+
+
+def college(request):
+    return render(request,'internal/college.html')
 #===================================================================================================
 #===================================================================================================
 
@@ -935,7 +939,6 @@ def mark_registration(request):
     internal_marks_3=request.POST.get("send_internal_marks_3")
     internal_marks_4=request.POST.get("send_internal_marks_4")
     internal_marks_5=request.POST.get("send_internal_marks_5")
-    print(internal_marks_5,'')
     internal_marks_6=request.POST.get("send_internal_marks_6")
     internal_marks_7=request.POST.get("send_internal_marks_7")
     internal_marks_8=request.POST.get("send_internal_marks_8")
@@ -989,6 +992,12 @@ def mark_registration(request):
     total_14=request.POST.get("send_total_14")
     total_mark_1=request.POST.get("send_total_mark_1")
     total_mark_obtained=request.POST.get("send_total_mark_obtained")
+    result_status_pass_and_failed_new=request.POST.get("send_result_status_pass_and_failed")
+    print(result_status_pass_and_failed_new,'********')
+    if result_status_pass_and_failed_new == '1':
+        save_result = '1'
+    else:
+        save_result = '2'
     
     grade_1=request.POST.get("send_grade_1")
     grade_2=request.POST.get("send_grade_2")
@@ -1083,6 +1092,7 @@ def mark_registration(request):
 
             pc_geting_number_rnd.total_mark_1=total_mark_1
             pc_geting_number_rnd.total_mark_obtained=total_mark_obtained
+            pc_geting_number_rnd.result=save_result
            
             pc_geting_number_rnd.grade_1=grade_1
             pc_geting_number_rnd.grade_2=grade_2
@@ -1174,7 +1184,8 @@ def mark_registration(request):
                 total_13=total_13 if total_13 else 0,
                 total_14=total_14 if total_14 else 0,
                 total_mark_1=total_mark_1 if total_mark_1 else 0,
-                total_mark_obtained=total_mark_obtained if total_mark_obtained else 0,            
+                total_mark_obtained=total_mark_obtained if total_mark_obtained else 0,
+                result = save_result,      
                 grade_1=grade_1,
                 grade_2=grade_2,
                 grade_3=grade_3,
