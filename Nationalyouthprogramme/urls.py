@@ -26,7 +26,8 @@ urlpatterns = [
     path('news_details',news_details,name='news_details'),
 
 
-    path('course_and_college',course_and_college,name='course_and_college'),
+    path('course',course,name='course'),
+    path('college',college,name='college'),
     path('vtc_course_admission',vtc_course_admission,name='vtc_course_admission'),
     path('admission_registration',admission_registration,name='admission_registration'),
     path('exam_registration',exam_registration,name='exam_registration'),

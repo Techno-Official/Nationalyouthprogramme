@@ -406,7 +406,7 @@
                            <input id="grade_12" placeholder="Grade 12" type="text" dir="reader"
                               value="{{admissionsFormdata.grade_12}}" class="form-control mt-2" />
 
-                           <input id="grade_13" placeholder="Grade 14" type="text" dir="reader"
+                           <input id="grade_13" placeholder="Grade 13" type="text" dir="reader"
                               value="{{admissionsFormdata.grade_13}}" class="form-control mt-2" />
                            <input id="grade_14" placeholder="Grade 14" type="text" dir="reader"
                               value="{{admissionsFormdata.grade_14}}" class="form-control mt-2" />
@@ -611,6 +611,18 @@
                               class="form-control" />
                         </div>
                      </div> -->
+                  </div>
+                  <div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group first">
+                           <label>Result <span class="text-danger">*</span></label>
+                           <select class="form-control" id="result_status_pass_and_failed">
+                              <option value="Select" selected>Select</option>
+                              <option value="1">Passed</option>
+                              <option value="2">Failled</option>
+                          </select>
+                        </div>
+                     </div>
                   </div>
                   <input type="button" onclick="mark_regiterform()" value="Submit Application" id="prc_btn"
                      class="btn px-5 btn-primary" style="background-color: #3446CD;" />
@@ -898,6 +910,7 @@
              let get_result_enter_register_book_number = document.getElementById("result_enter_register_book_number").value;
              let get_mark_obtained = document.getElementById("mark_obtained").value;
              let get_total_mark_2 = document.getElementById("total_mark_2").value;
+
              let er = document.querySelector("#error00");
              $("#afterclick").css("display", "none")
              if (get_registration_number_offix === "") {
@@ -1073,6 +1086,8 @@
          
              let get_total_mark_1 = document.getElementById("total_mark_1").value;
              let get_total_mark_obtained = document.getElementById("total_mark_obtained").value;
+             let get_result_status_pass_and_failed = document.getElementById("result_status_pass_and_failed").value;
+             console.log(get_result_status_pass_and_failed);
          
          
              let get_grade_1 = document.getElementById("grade_1").value;
@@ -1220,6 +1235,10 @@
                  er.innerHTML = "Enter Total Mark Obtained";
                  er.style.display = "block";
                  window.location.href = "#mark_registration";
+             } else if (get_result_status_pass_and_failed === "Select") {
+                 er.innerHTML = "Select Result";
+                 er.style.display = "block";
+                 window.location.href = "#mark_registration";
              } else {
                  $.ajax({
                      type: "POST",
@@ -1298,6 +1317,7 @@
                          send_total_14: get_total_14,
                          send_total_mark_1: get_total_mark_1,
                          send_total_mark_obtained: get_total_mark_obtained,
+                         send_result_status_pass_and_failed: get_result_status_pass_and_failed,
                          send_grade_1: get_grade_1,
                          send_grade_2: get_grade_2,
                          send_grade_3: get_grade_3,
