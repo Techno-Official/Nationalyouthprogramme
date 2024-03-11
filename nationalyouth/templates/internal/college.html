@@ -13,6 +13,8 @@
    <div class="d-lg-flex half">
       <div class="container">
          <div class="row align-items-center justify-content-center">
+
+
             <div class="d-lg-flex">
                <div class="container mb-16">
                   <div class="row align-items-center justify-content-center">
@@ -42,18 +44,40 @@
                                        <th>Aided / Un-Aided</th>
                                     </tr>
                                  </thead>
+                                 {% if affiliated_vocational_training_college_Kerla %}
                                  <tbody>
+                                    {% for ck in affiliated_vocational_training_college_Kerla %}
                                     <tr>
-                                       <td>No Records</td>
+                                       <td>{{ck.district}}</td>
+                                       <td>{{ck.college_name}}</td>
+                                       <td>{{ck.affiliation_number}}</td>
+                                       <td>{{ck.principal_id}}</td>
+                                       {% if ck.current_status == '1' %}
+                                       <td>Active</td>
+                                       {% else %}
+                                       <td>Inactive</td>
+                                       {% endif %}
+                                       {% if ck.college_type == '1' %}
+                                       <td>Aided</td>
+                                       {% else %}
+                                       <td>Un-Aided</td>
+                                       {% endif %}
                                     </tr>
+                                    {% endfor %}
                                  </tbody>
-                              </table>
+                                 {% else %}
+                                 <h4>No Records Found</h4>
+                                 {% endif %}
+                                 </table>
                            </div>
                         </section>
                      </div>
                   </div>
                </div>
             </div>
+
+
+
             <div class="d-lg-flex">
                <div class="container mb-16">
                   <div class="row align-items-center justify-content-center">
@@ -72,6 +96,7 @@
                            </center> -->
                         <section class="bg-light">
                            <div class="table-responsive" id="no-more-tables">
+                              {% if add_on_programme_college_affiliation_kerla %}
                               <table class="table bg-white">
                                  <thead class="bg-dark text-light">
                                     <tr>
@@ -82,11 +107,20 @@
                                         <th>Principal ID</th>
                                     </tr>
                                  </thead>
+                                 {% for ad in add_on_programme_college_affiliation_kerla %}
                                  <tbody>
                                     <tr>
-                                       <td>No Records Found</td>
+                                       <td>{{ad.state}}</td>
+                                       <td>{{ad.district}}</td>
+                                       <td>{{ad.college_name}}</td>
+                                       <td>{{ad.affiliation_number}}</td>
+                                       <td>{{ad.principal_id}}</td>
                                     </tr>
+                                    {% endfor %}
                                  </tbody>
+                                 {% else %}
+                                 <h4>No Records Found</h4>
+                                 {% endif %}
                               </table>
                            </div>
                         </section>

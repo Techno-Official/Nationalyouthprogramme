@@ -583,11 +583,28 @@ def news_details(request):
 #===================================================================================================
 #======================================= Course and college Page ===================================
 def course(request):
-    return render(request,'internal/course.html')
+    vocational_course = Vocational_Course.objects.all()
+    certificate_course = Certificate_Course.objects.all()
+    diploma_programme = Diploma_Programme.objects.all()
+    pg_diploma_programme = PG_Diploma_Programme.objects.all()
+
+    data = {
+        'vocational_course' : vocational_course,
+        'certificate_course': certificate_course,
+        'diploma_programme': diploma_programme,
+        'pg_diploma_programmes': pg_diploma_programme
+    }
+    return render(request,'internal/course.html',data)
 
 
 def college(request):
-    return render(request,'internal/college.html')
+    affiliated_vocational_training_college_Kerla = Affiliated_Vocational_Training_College_Kerla.objects.all()
+    add_on_programme_college_affiliation_kerla = Add_on_Programme_College_Affiliation_Kerla.objects.all()
+    data = {
+        'affiliated_vocational_training_college_Kerla':affiliated_vocational_training_college_Kerla,
+        'add_on_programme_college_affiliation_kerla':add_on_programme_college_affiliation_kerla
+    }
+    return render(request,'internal/college.html',data)
 #===================================================================================================
 #===================================================================================================
 
