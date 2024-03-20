@@ -25,10 +25,49 @@
 
 
 
+            <style>
+                .scrolling-text-container {
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                .scrolling-text {
+                    display: inline-block;
+                    animation: scrollLeft 25s linear infinite;
+                    font-weight: bold;
+                }
+
+                @keyframes scrollLeft {
+                    0% {
+                        transform: translateX(100%);
+                    }
+
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+            </style>
+
+            <div class="scrolling-text-container">
+                <div class="scrolling-text" style="color: white; margin-bottom: 60px;">
+                    Affiliation and Accreditation given by MSME Technology Development Center and National Skill
+                    Development Corporation (NSDC TP ID :144430) Government Of India Project )
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
 
 
 
             <div style="display: flex; justify-content: center; align-items: center;">
+
                 <div style="flex: 0 0 auto; width: 240px; height: 240px; text-align: center;">
                     <img src="{% static 'main/images/homepage/sizeimage.jpeg' %}" alt="Left Image">
                     <img src="{% static 'main/images/homepage/logo3.jpg' %}" alt="Right Image"
@@ -65,7 +104,7 @@
                         style="position: absolute; top: 50%; transform: translateY(-50%); left: 10px; height: 70px;border-radius: 50%;">
 
                     <!-- Right Logo -->
-                    <img src="{% static 'main/images/homepage/rightlogo.png' %}" alt="Right Logo"
+                    <img src="{% static 'main/images/homepage/msmelogo.png' %}" alt="Right Logo"
                         style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; height: 70px;border-radius: 50%;">
 
                     <h3 class="card-title text-center" style="color: rgb(255, 255, 255);">YOUTH EMPLOYABILITY SKILL
@@ -80,7 +119,7 @@
 
                     </h6>
 
-                    <h3 class="card-text" style="color: rgb(255, 255, 255);">Approved Cooperation
+                    <h3 class="card-text" style="color: rgb(255, 255, 255);">Approved Co-operation
                     </h3>
                     <h6 class="card-title text-center" style="color: rgb(255, 255, 255);">स्वीकृत सहयोग
 
