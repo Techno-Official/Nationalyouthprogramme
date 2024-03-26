@@ -25,15 +25,58 @@
 
 
 
+            <style>
+                .scrolling-text-container {
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                .scrolling-text {
+                    display: inline-block;
+                    animation: scrollLeft 25s linear infinite;
+                    font-weight: bold;
+                }
+
+                @keyframes scrollLeft {
+                    0% {
+                        transform: translateX(100%);
+                    }
+
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+            </style>
+
+            <div class="scrolling-text-container">
+                <div class="scrolling-text" style="color: white; margin-bottom: 60px;">
+                    Affiliation and Accreditation given by MSME Technology Development Center and National Skill
+                    Development Corporation (NSDC TP ID :144430) Government Of India Project )
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
 
 
 
             <div style="display: flex; justify-content: center; align-items: center;">
+
                 <div style="flex: 0 0 auto; width: 240px; height: 240px; text-align: center;">
                     <img src="{% static 'main/images/homepage/sizeimage.jpeg' %}" alt="Left Image">
+                    <img src="{% static 'main/images/homepage/logo3.jpg' %}" alt="Right Image"
+                        style="padding-top: 10px;">
                 </div>
-                <div
-                    style="border: 2px solid white; flex: 2; padding: 10px; margin-left: 35px; margin-right: 35px; text-align: center; border-radius: 10px;">
+
+
+                <!--<div
+                    style="border: 2px solid white; flex: 2; padding: 30px; margin-left: 35px; margin-right: 35px; text-align: center; border-radius: 10px;">
                     <h2 class="card-title text-center" style="color: rgb(255, 255, 255);">YOUTH EMPLOYABILITY SKILL
                         TRAINING
                     </h2>
@@ -49,10 +92,71 @@
                     <h5 class="card-title pt-3 pl-10 pr-10" style="color: rgb(255, 255, 255);">
                         GOVERNMENT OF INDIA
                     </h5>
+                </div> -->
+
+
+
+                <div
+                    style="border: 2px solid white; flex: 2; padding: 30px; margin-left: 35px; margin-right: 35px; text-align: center; border-radius: 10px; position: relative;">
+
+                    <!-- Left Logo -->
+                    <img src="{% static 'main/images/homepage/leftlogo.png' %}" alt="Left Logo"
+                        style="position: absolute; top: 50%; transform: translateY(-50%); left: 10px; height: 70px;border-radius: 50%;">
+
+                    <!-- Right Logo -->
+                    <img src="{% static 'main/images/homepage/msmelogo.png' %}" alt="Right Logo"
+                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; height: 70px;border-radius: 50%;">
+
+                    <h3 class="card-title text-center" style="color: rgb(255, 255, 255);">YOUTH EMPLOYABILITY SKILL
+                        TRAINING</h3>
+                    <h6 class="card-title text-center" style="color: rgb(255, 255, 255);">(An Aided Skill Training
+                        Institute Under the Government Project)
+                    </h6>
+                    <h3 class="card-text" style="color: rgb(255, 255, 255);">युवा रोजगार कौशल प्रशिक्षण
+                    </h3>
+                    <h6 class="card-title text-center" style="color: rgb(255, 255, 255);">सरकारी परियोजना के तहत एक
+                        सहायता प्राप्त कौशल प्रशिक्षण संस्थान
+
+                    </h6>
+
+                    <h3 class="card-text" style="color: rgb(255, 255, 255);">Approved Co-operation
+                    </h3>
+                    <h6 class="card-title text-center" style="color: rgb(255, 255, 255);">स्वीकृत सहयोग
+
+
+                    </h6>
+
+                    <h3 class="card-text" style="color: rgb(255, 255, 255);">MSME TECHNOLOGY DEVELOPMENT CENTRE
+                    </h3>
+                    <h6 class="card-title text-center" style="color: rgb(255, 255, 255);">
+                        Ministry of Micro, Small & Medium Enterprises, Government of India
+                    </h6>
+                    <h3 class="card-title pt-3 pl-10 pr-10" style="color: rgb(255, 255, 255);">एम एस एम ई
+                        प्रौद्योगिकी
+                        विकास केंद्र
+                    </h3>
+                    <h5 class="card-title pt-3 pl-10 pr-10" style="color: rgb(255, 255, 255);">सूक्ष्म, लघु और मध्यम
+                        उद्यम मंत्रालय, भारत सरकार
+
+                    </h5>
+                    <h5 class="card-title pt-3 pl-10 pr-10" style="color: rgb(255, 255, 255);">National Skill
+                        Development Corporation (NSDC TP ID :144430) Government Of India Project )
+
+                    </h5>
                 </div>
+
+
+
+
+
                 <div style="flex: 0 0 auto; width: 240px; height: 240px; text-align: center;">
                     <img src="{% static 'main/images/homepage/sizeimage.jpeg' %}" alt="Right Image">
+                    <img src="{% static 'main/images/homepage/logo3.jpg' %}" alt="Right Image"
+                        style="padding-top: 10px;">
+
+
                 </div>
+
             </div>
 
 
