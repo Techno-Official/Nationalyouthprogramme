@@ -161,7 +161,7 @@ def homepage(request):
     else:
         u.save()
         print("user is unqiue")
-    count=Visitor_IP.objects.all().count()
+    count=Visitor_IP.objects.all().count()+ 437070
 
     data={
         'count':count,
