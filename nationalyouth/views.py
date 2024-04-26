@@ -142,6 +142,9 @@ def common_data():
 #======================================= Homepage Page =============================================
 def homepage(request):
     user_pwd=CustomeUser.objects.all()
+    get_all_news = News.objects.all()
+    get_all_free_skill_image = Free_Skill_Training.objects.all()
+
 
     count = None
     def get_ip(request):
@@ -165,6 +168,8 @@ def homepage(request):
 
     data={
         'count':count,
+        'get_all_news':get_all_news,
+        'get_all_free_skill_image':get_all_free_skill_image,
     }
    
     return render(request,'Main/homepage.html',data)
@@ -516,6 +521,7 @@ def home_contact_us(request):
 #===================================================================================================
 #======================================= News Page =================================================
 def news(request):
+    get_all_news = News.objects.all()
     def get_ip(request):
         address = request.META.get('HTTP_X_FORWAREDED_FOR')
         if address:
@@ -537,6 +543,7 @@ def news(request):
 
     data={
         'count':count,
+        'get_all_news':get_all_news,
     }
     return render(request,'Main/latest_updates.html',data)
 #===================================================================================================
