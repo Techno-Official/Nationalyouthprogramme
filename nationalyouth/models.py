@@ -1075,3 +1075,27 @@ class PG_Diploma_Programme(models.Model):
         return str(self.id)
 #==================================================================================================
 #==================================================================================================
+
+
+
+#====================================== News ======================================================
+class News(models.Model):
+    news_title = models.CharField(max_length=250)
+    news_image = models.ImageField(upload_to='image/download/uploads/news_image/',null=True,blank=True)
+    news_description = models.TextField()
+    news_date = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return str(self.news_title)
+#==================================================================================================
+#==================================================================================================
+
+
+
+#====================================== Free Skill Training =======================================
+class Free_Skill_Training(models.Model):
+    skill_image = models.ImageField(upload_to='image/download/uploads/skill_image/')
+    skill_date = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return str(self.id)
+#==================================================================================================
+#==================================================================================================

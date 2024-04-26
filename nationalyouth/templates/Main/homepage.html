@@ -416,7 +416,7 @@
                 <a class="btn btn-danger mb-5 mt-11" href="/gallery">View All</a>
             </center>
         </section>
-
+        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             // Activate the carousel
@@ -426,6 +426,7 @@
                 });
             });
         </script>
+        
 
 
 
@@ -589,24 +590,19 @@
             </div>
         </header>
         <div class="pt-7 pb-6 pt-lg-11 pb-lg-9 pt-xl-14 pb-xl-12">
+            {% for nw in get_all_news %}
             <article class="ueEveColumn__list position-relative px-4 py-3 px-lg-8 py-lg-6">
                 <div class="d-lg-flex align-items-md-center">
                     <time datetime="2011-01-12"
                         class="uecTime text-black fontAlter text-uppercase flex-shrink-0 mr-4 mr-lg-6 d-block mb-2 mb-lg-0">
-                        <span class="textLarge">12</span> April
+                        <span style="font-size: 18px;" class="textLarge">{{nw.news_date}}
                     </time>
                     <div class="d-md-flex align-items-md-center flex-grow-1">
                         <div class="descrWrap flex-grow-1">
-                            <strong class="tagTitle d-block fwSemiBold mb-2" style="color: black;">National Youth
-                                Program Diploma in Hospital Administration (One Year) Exam Result Declared
-                                2023-2024(Batch)
-                                900363578(First Rank), 900363579(Second Rank), 900363580, 900363581, 900363582,
-                                900363583, 900363584, 900363585, 900363586, 900363587, 900363588, 900363589, 900363590,
-                                900363591, 900363592, 900363593(Third Rank), 900363594,900363595, 900363596, 900363597,
-                                900363598, 900363599
+                            <strong class="tagTitle d-block fwSemiBold mb-2" style="color: black;">{{nw.news_description}}
                             </strong>
                         </div>
-                        <a href="#"
+                        <a href="javascript:void()"
                             class="btn btnCustomLightOutline bdrWidthAlter btn-sm text-capitalize position-relative border-0 p-0 flex-shrink-0 ml-md-4"
                             data-hover="More Details">
                             <span class="d-block btnText">More Details</span>
@@ -614,58 +610,7 @@
                     </div>
                 </div>
             </article>
-            <article class="ueEveColumn__list position-relative px-4 py-3 px-lg-8 py-lg-6">
-                <div class="d-lg-flex align-items-md-center">
-                    <time datetime="2011-01-12"
-                        class="uecTime text-lDark fontAlter text-uppercase flex-shrink-0 mr-4 mr-lg-6 d-block mb-2 mb-lg-0">
-                        <span class="textLarge">26</span> November
-                    </time>
-                    <div class="d-md-flex align-items-md-center flex-grow-1">
-                        <div class="descrWrap flex-grow-1">
-                            <strong class="tagTitle d-block fwSemiBold mb-2" style="color: black;">നാഷണൽ
-                                യൂത്ത് പ്രോഗ്രാം 2022-
-                                ഡിസംബർ മാസം നടത്തിയ വിവിധ സർട്ടിഫിക്കറ്റ് /ഡിപ്ലോമ /പിജി ഡിപ്ലോമ
-                                /അഡ്വാൻസ്ഡ്
-                                ഡിപ്ലോമ
-                                പരീക്ഷകളുടെ റിസൾട്ട്‌ പ്രഖ്യാപിച്ചു. സ്റ്റുഡന്റസ് സർട്ടിഫിക്കറ്റ്
-                                വെരിഫിക്കേഷൻ പേജിൽ
-                                രജിസ്റ്റർ നമ്പർ നൽകി റിസൾട്ട്‌ പരിശോധിക്കാവുന്നതാണ്
-                            </strong>
-                        </div>
-                        <a href="#"
-                            class="btn btnCustomLightOutline bdrWidthAlter btn-sm text-capitalize position-relative border-0 p-0 flex-shrink-0 ml-md-4"
-                            data-hover="More Details">
-                            <span class="d-block btnText">More Details</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class="ueEveColumn__list position-relative px-4 py-3 px-lg-8 py-lg-6">
-                <div class="d-lg-flex align-items-md-center">
-                    <time datetime="2011-01-12"
-                        class="uecTime text-lDark fontAlter text-uppercase flex-shrink-0 mr-4 mr-lg-6 d-block mb-2 mb-lg-0">
-                        <span class="textLarge">26</span> November
-                    </time>
-                    <div class="d-md-flex align-items-md-center flex-grow-1">
-                        <div class="descrWrap flex-grow-1">
-                            <strong class="tagTitle d-block fwSemiBold mb-2" style="color: black;">നാഷണൽ
-                                യൂത്ത് പ്രോഗ്രാം 2022-
-                                ഡിസംബർ മാസം നടത്തിയ വിവിധ സർട്ടിഫിക്കറ്റ് /ഡിപ്ലോമ /പിജി ഡിപ്ലോമ
-                                /അഡ്വാൻസ്ഡ്
-                                ഡിപ്ലോമ
-                                പരീക്ഷകളുടെ റിസൾട്ട്‌ പ്രഖ്യാപിച്ചു. സ്റ്റുഡന്റസ് സർട്ടിഫിക്കറ്റ്
-                                വെരിഫിക്കേഷൻ പേജിൽ
-                                രജിസ്റ്റർ നമ്പർ നൽകി റിസൾട്ട്‌ പരിശോധിക്കാവുന്നതാണ്
-                            </strong>
-                        </div>
-                        <a href="#"
-                            class="btn btnCustomLightOutline bdrWidthAlter btn-sm text-capitalize position-relative border-0 p-0 flex-shrink-0 ml-md-4"
-                            data-hover="More Details">
-                            <span class="d-block btnText">More Details</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
+            {% endfor %}
         </div>
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center pt-2">
