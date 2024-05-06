@@ -505,6 +505,6 @@ admin.site.register(Vocational_Course,AdminVocational_Course)
 admin.site.register(Certificate_Course,AdminCertificate_Course)
 admin.site.register(Diploma_Programme,AdminDiploma_Programme)
 admin.site.register(PG_Diploma_Programme,AdminPG_Diploma_Programme)
-
-
+admin.site.register(News)
+admin.site.register(Free_Skill_Training)
 
