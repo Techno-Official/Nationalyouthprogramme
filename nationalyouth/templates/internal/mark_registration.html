@@ -618,8 +618,8 @@
                            <label>Result <span class="text-danger">*</span></label>
                            <select class="form-control" id="result_status_pass_and_failed">
                               <option value="Select" selected>Select</option>
-                              <option value="1">Passed</option>
-                              <option value="2">Failled</option>
+                              <option value="1" {% if admissionsFormdata.result == '1' %} selected {% endif %}>Passed</option>
+                              <option value="2" {% if admissionsFormdata.result == '2' %} selected {% endif %}>Failled</option>
                           </select>
                         </div>
                      </div>

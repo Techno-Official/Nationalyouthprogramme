@@ -456,6 +456,9 @@ class Mark_List_Registration(models.Model):
     total_mark_1 = models.IntegerField(default=0)
     total_mark_obtained = models.IntegerField(default=0)
     result = models.CharField(max_length=25,choices=RESULT_STATUS,null=True,blank=True)
+
+    certificate_image = models.ImageField(upload_to='image/download/uploads/certificate_image/',null=True,blank=True)
+    marklist_image = models.ImageField(upload_to='image/download/uploads/marklist_image/',null=True,blank=True)
     
 
     #========================Office use=================
