@@ -2374,3 +2374,35 @@ def staff_work_alloted(request):
     return render(request,'internal/staff_work_alloted.html',data)
 #===================================================================================================
 #===================================================================================================
+
+def student_certificate__verification(request):
+    all_mark_enter_clerk = Mark_Status.objects.all()
+    all_result_status = Result_Status.objects.all()
+    search_student_data = ''
+    search_get_exam = ''
+    search_student_data_error = ''
+    admissionsFormdata=None
+    register_number_allready=""
+    get_search_registration_number=request.GET.get("search_registration_number")
+    if get_search_registration_number:
+        admissions = Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
+        get_exam = Exam_Registration.objects.filter(registration_number=get_search_registration_number).first()
+        admissionsFormdata = Mark_List_Registration.objects.filter(registration_number=get_search_registration_number).first()
+        vtc_admissions = VTC_Course_Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
+
+        if admissionsFormdata:
+            search_student_data=admissionsFormdata
+        else:
+            search_student_data_error = "Invalid Registration Number!"
+        
+    data = {
+        'all_mark_enter_clerk':all_mark_enter_clerk,
+        'all_result_status':all_result_status,
+        'search_student_data':search_student_data,
+        'search_get_exam':search_get_exam,
+        'search_student_data_error':search_student_data_error,
+        'get_search_registration_number':get_search_registration_number,
+        "admissionsFormdata":admissionsFormdata,
+        "register_number_allready":register_number_allready
+    }
+    return render(request,'internal/student_certificate_verification.html',data)

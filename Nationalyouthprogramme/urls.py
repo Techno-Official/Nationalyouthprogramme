@@ -68,6 +68,7 @@ urlpatterns = [
 
 
     path('staff_work_alloted',staff_work_alloted,name='staff_work_alloted'),
+    path('student_certificate__verification',student_certificate__verification,name="student_certificate__verification")
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
