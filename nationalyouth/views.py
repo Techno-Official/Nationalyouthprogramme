@@ -2384,6 +2384,9 @@ def student_certificate__verification(request):
     admissionsFormdata=None
     register_number_allready=""
     get_search_registration_number=request.GET.get("search_registration_number")
+    certificate_image_with_path = None
+    marklist_image_with_path = None
+
     if get_search_registration_number:
         admissions = Admission_Registration.objects.filter(registration_number=get_search_registration_number).first()
         get_exam = Exam_Registration.objects.filter(registration_number=get_search_registration_number).first()
@@ -2392,8 +2395,14 @@ def student_certificate__verification(request):
 
         if admissionsFormdata:
             search_student_data=admissionsFormdata
+            if search_student_data.certificate_image:
+                certificate_image_with_path = search_student_data.certificate_image.url
+            if search_student_data.marklist_image:
+                marklist_image_with_path = search_student_data.marklist_image.url
         else:
             search_student_data_error = "Invalid Registration Number!"
+
+
         
     data = {
         'all_mark_enter_clerk':all_mark_enter_clerk,
@@ -2403,6 +2412,8 @@ def student_certificate__verification(request):
         'search_student_data_error':search_student_data_error,
         'get_search_registration_number':get_search_registration_number,
         "admissionsFormdata":admissionsFormdata,
-        "register_number_allready":register_number_allready
+        "register_number_allready":register_number_allready,
+        'certificate_image_with_path':certificate_image_with_path,
+        'marklist_image_with_path':marklist_image_with_path,
     }
     return render(request,'internal/student_certificate_verification.html',data)
