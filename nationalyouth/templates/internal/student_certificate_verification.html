@@ -97,20 +97,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-5 mb-5">
                         <div class="col-md-6">
                             <div class="form-group first">
                                 <label for="certificateImage">Certificate Image <span class="text-danger">*</span></label>
-                                <div id="certificateImage" class="image-box" style="background-image: url('{{exmd.certificate_image_url}}');"></div>
+                                {% if certificate_image_with_path %}
+                                    <a download class="btn btn-success" href="{{ certificate_image_with_path }}">Download Certificate Image</a>
+                                {% else %}
+                                    <p class="text-danger">No certificate image found.</p>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group first">
                                 <label for="markListImage">Marklist Image <span class="text-danger">*</span></label>
-                                <div id="markListImage" class="image-box" style="background-image: url('{{exmd.mark_list_image_url}}');"></div>
+                                {% if marklist_image_with_path %}
+                                    <a download class="btn btn-success" href="{{ marklist_image_with_path }}">Download Marklist Image</a>
+                                {% else %}
+                                    <p class="text-danger">No marklist image found.</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
+                    
                     <style>
                         .image-box {
                             width: 80%;
